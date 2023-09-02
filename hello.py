@@ -12,5 +12,7 @@ df['Formats'] = df['channel'] + ' ' + df['formats']
 df = df.drop(columns=['channel'])
 df = df.drop(columns=['formats'])
 
+st.dataframe(df)
+
 st.bar_chart(df)
 
