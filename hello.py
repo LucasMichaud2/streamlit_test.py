@@ -7,3 +7,8 @@ df = pd.read_csv(csv_url)
 st.title('My first Dashboard')
 
 st.dataframe(df)
+
+df['Formats'] = df['channel'] + ' ' + df['formats]
+
+st.bar_chart(df)
+
