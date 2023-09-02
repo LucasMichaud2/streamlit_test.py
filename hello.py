@@ -5,6 +5,6 @@ csv_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/mai
 df = pd.read_csv(csv_url)
 
 
-st.title('Hello World')
+
 
 st.dataframe(df)
