@@ -12,7 +12,7 @@ st.dataframe(df)
 df['Formats'] = df['channel'] + ' ' + df['formats']
 df = df.drop(columns=['channel'])
 df = df.drop(columns=['formats'])
-df['consideration'] = np.exp(df['consideration']
+df['consideration'] = (df['consideration'])*4
                              
 st.dataframe(df)
 
