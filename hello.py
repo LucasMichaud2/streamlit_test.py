@@ -14,5 +14,5 @@ df = df.drop(columns=['formats'])
 
 st.dataframe(df)
 
-st.bar_chart(df)
+st.bar_chart(df, x='Formats', y='consideration')
 
