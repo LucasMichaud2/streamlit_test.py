@@ -13,6 +13,7 @@ df['Formats'] = df['channel'] + ' ' + df['formats']
 df = df.drop(columns=['channel'])
 df = df.drop(columns=['formats'])
 df['consideration'] = np.exp(df['consideration']
+                             
 st.dataframe(df)
 
 st.bar_chart(df, x='Formats', y='consideration')
