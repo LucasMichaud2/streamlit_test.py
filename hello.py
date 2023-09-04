@@ -31,10 +31,10 @@ data = {
 }
 
 # Create a DataFrame
-df = pd.DataFrame(data)
+df_heatmap = pd.DataFrame(data)
 
 # Calculate the correlation matrix
-corr_matrix = df.corr()
+corr_matrix = df_heatmap.corr()
 
 # Create the heatmap using seaborn
 plt.figure(figsize=(6, 4))
