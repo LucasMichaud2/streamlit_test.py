@@ -35,7 +35,7 @@ st.title("Colored Box Example")
 
 # Define colors
 color1 = "#FFFF00"
-color2 = "#FF5500"
+color2 = "#FFBB00"
 color3 = "#FF0000"
 
 # Create colored boxes using Markdown with CSS
