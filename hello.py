@@ -56,3 +56,15 @@ df['consideration'] = df['consideration'].apply(round_5)
 
 st.dataframe(df)
 
+color_dictionary = {
+    0: '#FFFF00', 5: '#FFE000', 10: '#FFA300', 15: '#FF8500', 20: '#FF6600',
+    25: '#FF4700', 30: '#FF2800', 35: '#FF0900', 40: '#EE0000', 45: '#DD0000',
+    50: '#CC0000', 55: '#BB0000', 60: '#AA0000', 65: '#990000', 70: '#880000',
+    75: '#770000', 80: '#660000', 85: '#550000', 90: '#440000', 95: '#330000', 
+    100: '#220000'
+}
+
+df['mapped_colors'] = df['consideration'].map(color_dictionary)
+
+st.dataframe(df)
+
