@@ -73,6 +73,10 @@ st.markdown(
   f"""
   <div style='display: flex;'>
       <div style='background-color:{df.at[0, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{df.at[5, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{df.at[10, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{df.at[15, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{df.at[18, 'mapped_colors']}; width: 100px; height: 50px;'></div>
   </div>
   """,
   unsafe_allow_html=True
