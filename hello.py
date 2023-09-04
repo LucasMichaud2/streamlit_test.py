@@ -72,7 +72,7 @@ st.dataframe(df)
 st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{df.at[0, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{df.at[0, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'>{df.at[0, 'Formats']}</div>
       <div style='background-color:{df.at[5, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
       <div style='background-color:{df.at[10, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
       <div style='background-color:{df.at[15, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
