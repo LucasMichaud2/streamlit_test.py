@@ -68,3 +68,12 @@ df['mapped_colors'] = df['consideration'].map(color_dictionary)
 
 st.dataframe(df)
 
+
+st.markdown(
+  f"""
+  <div style='display: flex;'>
+      <div style='background-color:{df.at[0, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+  </div>
+  """,
+  unsafe_allow_html=True
+)
