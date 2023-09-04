@@ -25,4 +25,5 @@ st.bar_chart(df, x='Formats', y='consideration')
 
 with st.sidebar:
   st.write('this is a side bar')
-  container = st.container()
+  with st.container():
+    st.write('this is a container')
