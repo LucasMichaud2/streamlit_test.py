@@ -50,3 +50,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+def round_5(x):
+  return round(x/5) * 5
+df['consideration'] = df['consideration'].apply(round_5)
+
+st.dataframe(df)
+
