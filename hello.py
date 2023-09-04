@@ -34,7 +34,7 @@ import streamlit as st
 st.title("Colored Box Example")
 
 # Define colors
-color1 = "#FF5733"
+color1 = "#0000FF"
 color2 = "#33FF57"
 color3 = "#5733FF"
 
