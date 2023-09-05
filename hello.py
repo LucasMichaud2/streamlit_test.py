@@ -21,13 +21,14 @@ st.dataframe(df)
 
 st.bar_chart(df, x='Formats', y='consideration')
 
+options = df['channel']
 
 
 with st.sidebar:
   st.write('this is a side bar')
   with st.container():
     st.write('this is a container')
-  st.selectbox('Objecif')
+  st.selectbox('Objecif', options)
 
 
 import streamlit as st
