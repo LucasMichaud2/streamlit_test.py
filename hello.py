@@ -2,18 +2,24 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+# IMPORTS
 
 csv_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/final_csv.csv'
 df = pd.read_csv(csv_url)
-options = df['channel']
+
+age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+age_df = pd.DataFrame(test_1)
+
+objective_list = ['branding', 'consideration', 'conversion']
+objective_df = pd.DataFrame(objective_list)
+
 
 st.title('My first Dashboard')
 
 st.sidebar.title('This is a sidebar')
 
-selected_option = st.sidebar.selectbox("Select an option", options)
-
-st.dataframe(df[df['channel'] == selected_option])
+selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
+selected_age = st.sidebar.selectbox("Select an age", age_df)
 
 
 df['Formats'] = df['channel'] + ' ' + df['formats']
