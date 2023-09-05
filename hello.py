@@ -8,7 +8,7 @@ csv_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/mai
 df = pd.read_csv(csv_url)
 
 age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
-age_df = pd.DataFrame(test_1)
+age_df = pd.DataFrame(age_list)
 
 objective_list = ['branding', 'consideration', 'conversion']
 objective_df = pd.DataFrame(objective_list)
