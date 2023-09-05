@@ -21,8 +21,6 @@ st.dataframe(df)
 
 st.bar_chart(df, x='Formats', y='consideration')
 
-options = df['channel']
-
 
 with st.sidebar:
   st.write('this is a side bar')
@@ -31,7 +29,7 @@ with st.sidebar:
    
 
 
-import streamlit as st
+
 
 st.title("Colored Box Example")
 
