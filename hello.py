@@ -5,7 +5,7 @@ import numpy as np
 
 csv_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/final_csv.csv'
 df = pd.read_csv(csv_url)
-options = df['channel'
+options = df['channel']
 
 st.title('My first Dashboard')
 
