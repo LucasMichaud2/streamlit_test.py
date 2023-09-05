@@ -26,7 +26,7 @@ with st.sidebar:
   st.write('this is a side bar')
   with st.container():
     st.write('this is a container')
-   
+    st.selectbox('hello')
 
 
 
