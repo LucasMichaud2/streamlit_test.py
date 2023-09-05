@@ -9,6 +9,7 @@ df = pd.read_csv(csv_url)
 st.title('My first Dashboard')
 
 st.dataframe(df)
+options = df['channel']
 
 df['Formats'] = df['channel'] + ' ' + df['formats']
 df = df.drop(columns=['channel'])
@@ -24,7 +25,7 @@ st.bar_chart(df, x='Formats', y='consideration')
 
 st.sidebar.title('This is a sidebar')
 
-selected_option = st.sidebar.selectbox("Select an option", ["Option 1", "Option 2", "Option 3"])
+selected_option = st.sidebar.selectbox("Select an option", options)
     
 
 
