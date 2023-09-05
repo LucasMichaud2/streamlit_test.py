@@ -22,11 +22,10 @@ st.dataframe(df)
 st.bar_chart(df, x='Formats', y='consideration')
 
 
-with st.sidebar:
-  st.write('this is a side bar')
-  with st.container():
-    st.write('this is a container')
-    st.selectbox('hello')
+st.sidebar.title('This is a sidebar')
+
+selected_option = st.sidebar.selectbox("Select an option", ["Option 1", "Option 2", "Option 3"])
+    
 
 
 
