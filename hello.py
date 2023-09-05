@@ -5,11 +5,16 @@ import numpy as np
 
 csv_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/final_csv.csv'
 df = pd.read_csv(csv_url)
+options = df['channel'
 
 st.title('My first Dashboard')
 
-st.dataframe(df)
-options = df['channel']
+st.sidebar.title('This is a sidebar')
+
+selected_option = st.sidebar.selectbox("Select an option", options)
+
+st.dataframe(df[df['channel'] == selected_option])
+
 
 df['Formats'] = df['channel'] + ' ' + df['formats']
 df = df.drop(columns=['channel'])
@@ -21,15 +26,6 @@ df['consideration'] = ((df['consideration'] - df_min) / (df_max-df_min))*100
 st.dataframe(df)
 
 st.bar_chart(df, x='Formats', y='consideration')
-
-
-st.sidebar.title('This is a sidebar')
-
-selected_option = st.sidebar.selectbox("Select an option", options)
-    
-
-
-
 
 st.title("Colored Box Example")
 
