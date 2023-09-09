@@ -14,9 +14,9 @@ objective_list = ['none', 'branding', 'consideration', 'conversion']
 objective_df = pd.DataFrame(objective_list)
 
 
-st.title('My first Dashboard')
+st.title('GAMNED Marketing Tool')
 
-st.sidebar.title('This is a sidebar')
+st.sidebar.title('Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.selectbox("Select an age", age_df)
