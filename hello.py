@@ -150,13 +150,21 @@ st.sidebar.title('Parameters')
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.selectbox("Select an age", age_df)
 
-st.dataframe(df_objective)
 
 # Getting Variables
 
 gamned_class = GAMNED_UAE(df_data, df_objective)
 df_age = gamned_class.get_age_data()
 df_freq = gamned_class.get_data_freq()
+df_rating = gamned.get_mean_rating()
+
+
+#####################################   Pie Chart freq ####################################
+
+df_freq['branding'] = df_freq['branding'].round(1)
+df_freq['consideration'] = df_freq['consideration'].round(1)
+df_freq['conversion'] = df_freq['conversion'].round(1)
+
 
 st.dataframe(df_freq)
 
