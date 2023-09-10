@@ -5,6 +5,9 @@ import numpy as np
 objective_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Objectives_updated-Table%201.csv'
 df_objective = pd.read_csv(objective_url)
 
+data_url =  'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/GAMNED_dataset_V2.2.csv'
+df_data = pd.read_csv(data_url)
+
 st.dataframe(df_objective)
 
 class GAMNED_UAE:
@@ -134,7 +137,10 @@ class GAMNED_UAE:
 
       return total_rating
 
-# IMPORTS
+# Getting Variables
+
+gamned_class = GAMEND_UAE(df_data, df_objective)
+
 
 
 age_list = ['none', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
