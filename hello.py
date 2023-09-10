@@ -166,7 +166,9 @@ df_freq['branding'] = df_freq['branding'].round(1)
 df_freq['consideration'] = df_freq['consideration'].round(1)
 df_freq['conversion'] = df_freq['conversion'].round(1)
 
-st.area_chart(data=df_freq, x='channel', y=['branding', 'consideration', 'conversion'])
+
+
+st.area_chart(data=df_freq, x='channel', y=selected_objective)
 
 
 st.dataframe(df_freq)
