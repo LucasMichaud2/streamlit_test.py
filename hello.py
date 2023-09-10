@@ -149,7 +149,7 @@ st.sidebar.title('Parameters')
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.selectbox("Select an age", age_df)
 
-
+'''
 df['Formats'] = df['channel'] + ' ' + df['formats']
 df = df.drop(columns=['channel'])
 df = df.drop(columns=['formats'])
@@ -158,6 +158,7 @@ df_max = df['consideration'].max()
 df['consideration'] = ((df['consideration'] - df_min) / (df_max-df_min))*100
                              
 st.dataframe(df)
+
 
 st.bar_chart(df, x='Formats', y='consideration')
 
@@ -212,3 +213,4 @@ st.markdown(
   """,
   unsafe_allow_html=True
 )
+'''
