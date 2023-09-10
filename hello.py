@@ -8,14 +8,6 @@ df_objective = pd.read_csv(objective_url)
 data_url =  'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/GAMNED_dataset_V2.2.csv'
 df_data = pd.read_csv(data_url)
 
-st.title('GAMNED Marketing Tool')
-
-st.sidebar.title('Parameters')
-
-selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
-selected_age = st.sidebar.selectbox("Select an age", age_df)
-
-st.dataframe(df_objective)
 
 class GAMNED_UAE:
 
@@ -143,6 +135,22 @@ class GAMNED_UAE:
       total_rating = total_rating.groupby('channel').sum()
 
       return total_rating
+
+
+age_list = ['none', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+age_df = pd.DataFrame(age_list)
+
+objective_list = ['none', 'branding', 'consideration', 'conversion']
+objective_df = pd.DataFrame(objective_list)
+
+st.title('GAMNED Marketing Tool')
+
+st.sidebar.title('Parameters')
+
+selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
+selected_age = st.sidebar.selectbox("Select an age", age_df)
+
+st.dataframe(df_objective)
 
 # Getting Variables
 
