@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+from gamned_class.py import GAMNED_UAE
 
 # IMPORTS
 
