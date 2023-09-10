@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 objective_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Objectives_updated-Table%201.csv'
 df_objective = pd.read_csv(objective_url)
@@ -165,6 +166,20 @@ df_freq['branding'] = df_freq['branding'].round(1)
 df_freq['consideration'] = df_freq['consideration'].round(1)
 df_freq['conversion'] = df_freq['conversion'].round(1)
 
+updated_data = df_freq[['channel', selected_objective]]
+
+st.dataframe(updated_data)
+
+'''
+# Create a pie chart using matplotlib
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+
+# Display the pie chart using st.pyplot()
+st.pyplot(fig)
+
+'''
 
 st.dataframe(df_freq)
 
