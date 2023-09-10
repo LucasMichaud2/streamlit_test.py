@@ -140,6 +140,10 @@ class GAMNED_UAE:
 # Getting Variables
 
 gamned_class = GAMNED_UAE(df_data, df_objective)
+df_age = gamned_class.get_age_data()
+df_freq = gamned_class.get_data_freq()
+
+st.dataframe(df_freq)
 
 
 
