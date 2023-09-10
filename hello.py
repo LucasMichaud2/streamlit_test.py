@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from 'https://github.com/LucasMichaud2/streamlit_test.py/blob/main/gamned_class.py' import GAMNED_UAE
+
 
 # IMPORTS
 
