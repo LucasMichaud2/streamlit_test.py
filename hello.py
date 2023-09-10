@@ -156,7 +156,7 @@ selected_age = st.sidebar.selectbox("Select an age", age_df)
 gamned_class = GAMNED_UAE(df_data, df_objective)
 df_age = gamned_class.get_age_data()
 df_freq = gamned_class.get_data_freq()
-df_rating = gamned.get_mean_rating()
+df_rating = gamned_class.get_mean_rating()
 
 
 #####################################   Pie Chart freq ####################################
