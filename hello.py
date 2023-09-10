@@ -139,7 +139,7 @@ class GAMNED_UAE:
 
 # Getting Variables
 
-gamned_class = GAMEND_UAE(df_data, df_objective)
+gamned_class = GAMNED_UAE(df_data, df_objective)
 
 
 
