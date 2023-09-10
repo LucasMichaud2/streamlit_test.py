@@ -166,20 +166,8 @@ df_freq['branding'] = df_freq['branding'].round(1)
 df_freq['consideration'] = df_freq['consideration'].round(1)
 df_freq['conversion'] = df_freq['conversion'].round(1)
 
-updated_data = df_freq[['channel', selected_objective]]
+st.area_chart(data=df_freq, x=df_freq['channel'], y=df_freq[['branding', 'consideration', 'conversion']])
 
-st.dataframe(updated_data)
-
-'''
-# Create a pie chart using matplotlib
-fig, ax = plt.subplots()
-ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
-ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-
-# Display the pie chart using st.pyplot()
-st.pyplot(fig)
-
-'''
 
 st.dataframe(df_freq)
 
