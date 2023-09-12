@@ -197,7 +197,7 @@ heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
 heat_map2 = heat_map2.reset_index()
 
 ##################################### taking out the code and name ########################
-'''
+
 name0 = heat_map2.at[0, 'channel']
 color0 = heat_map2.at[0, 'mapped_colors']
 name1 = heat_map2.at[1, 'channel']
@@ -209,7 +209,7 @@ color3 = heat_map2.at[3, 'mapped_colors']
 name4 = heat_map2.at[4, 'channel']
 color4 = heat_map2.at[4, 'mapped_colors']
 
-'''
+
 #####################################   Pie Chart freq ####################################
 
 df_freq['branding'] = df_freq['branding'].round(1)
@@ -235,7 +235,7 @@ st.text(' ')
 
 st.subheader("Heatmap")
 
-'''
+
 
 
 st.markdown(
@@ -252,4 +252,4 @@ st.markdown(
   unsafe_allow_html=True
 )
 
-'''
+
