@@ -229,8 +229,6 @@ st.subheader('Top Formats')
 
 st.dataframe(output_rating)
 
-st.dataframe(heat_map2)
-
 st.text(' ')
 
 st.subheader("Heatmap")
