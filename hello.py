@@ -195,6 +195,19 @@ heat_map2[selected_objective] = heat_map2[selected_objective].apply(round_5)
 
 heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
 
+##################################### taking out the code and name ########################
+
+name0 = heat_map2.at[0, 'channel']
+color0 = heat_map2.at[0, 'mapped_colors']
+name1 = heat_map2.at[1, 'channel']
+color1 = heat_map2.at[1, 'mapped_colors']
+name2 = heat_map2.at[2, 'channel']
+color2 = heat_map2.at[2, 'mapped_colors']
+name3 = heat_map2.at[3, 'channel']
+color3 = heat_map2.at[3, 'mapped_colors']
+name4 = heat_map2.at[4, 'channel']
+color4 = heat_map2.at[4, 'mapped_colors']
+
 
 #####################################   Pie Chart freq ####################################
 
@@ -217,73 +230,24 @@ st.dataframe(output_rating)
 
 st.dataframe(heat_map2)
 
+st.text(' ')
+
+st.subheader("Heatmap")
 
 
-
-
-
-'''
-df['Formats'] = df['channel'] + ' ' + df['formats']
-df = df.drop(columns=['channel'])
-df = df.drop(columns=['formats'])
-df_min = df['consideration'].min()
-df_max = df['consideration'].max()
-df['consideration'] = ((df['consideration'] - df_min) / (df_max-df_min))*100
-                             
-st.dataframe(df)
-
-
-st.bar_chart(df, x='Formats', y='consideration')
-
-st.title("Colored Box Example")
-
-# Define colors
-color1 = "#FFFF00"
-color2 = "#FFBB00"
-color3 = "#440000"
-
-# Create colored boxes using Markdown with CSS
-st.markdown(
-    f"""
-    <div style='display: flex;'>
-        <div style='background-color:{color1}; width: 100px; height: 100px; margin-right: 10px;'></div>
-        <div style='background-color:{color2}; width: 100px; height: 100px; margin-right: 10px;'></div>
-        <div style='background-color:{color3}; width: 100px; height: 100px;'></div>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
-def round_5(x):
-  return round(x/5) * 5
-df['consideration'] = df['consideration'].apply(round_5)
-
-st.dataframe(df)
-
-color_dictionary = {
-    0: '#F1C40F', 5: '#F4D03F', 10: '#F7DC6F', 15: '#F9E79F', 20: '#FAD7A0',
-    25: '#F8C471', 30: '#F5B041', 35: '#F39C12', 40: '#E67E22', 45: '#D35400',
-    50: '#EC7063', 55: '#E74C3C', 60: '#CB4335', 65: '#B03A2E', 70: '943126',
-    75: '#78281F', 80: '#8E44AD', 85: '#7D3C98', 90: '#6C3483', 95: '#5B2C6F', 
-    100: '#4A235A'
-}
-
-df['mapped_colors'] = df['consideration'].map(color_dictionary)
-
-st.dataframe(df)
 
 
 st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{df.at[0, 'mapped_colors']}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'};'>{df.at[0, 'Formats']}</div>
-      <div style='background-color:{df.at[5, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
-      <div style='background-color:{df.at[10, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
-      <div style='background-color:{df.at[15, 'mapped_colors']}; width: 100px; height: 50px; margin-riht: 10px;'></div>
-      <div style='background-color:{df.at[18, 'mapped_colors']}; width: 100px; height: 50px;'></div>
+      <div style='background-color:{color0}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'};'>{name0}</div>
+      <div style='background-color:{color1}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{color2}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{color3}; width: 100px; height: 50px; margin-riht: 10px;'></div>
+      <div style='background-color:{color4}; width: 100px; height: 50px;'></div>
   </div>
   """,
   unsafe_allow_html=True
 )
-'''
+
