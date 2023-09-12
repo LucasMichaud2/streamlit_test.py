@@ -194,6 +194,7 @@ heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
 heat_map2[selected_objective] = heat_map2[selected_objective].apply(round_5)
 
 heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
+heat_map2 = heat_map2.reset_index()
 
 ##################################### taking out the code and name ########################
 '''
