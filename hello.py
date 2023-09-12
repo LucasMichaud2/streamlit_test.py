@@ -145,7 +145,8 @@ objective_list = ['none', 'branding', 'consideration', 'conversion']
 objective_df = pd.DataFrame(objective_list)
 
 st.title('GAMNED Marketing Tool')
-
+st.text(' ')
+st.header('Frequently Used')
 st.sidebar.title('Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
