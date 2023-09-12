@@ -142,7 +142,7 @@ class GAMNED_UAE:
       return total_rating
 
 
-age_list = ['none', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
 age_df = pd.DataFrame(age_list)
 
 objective_list = ['none', 'branding', 'consideration', 'conversion']
