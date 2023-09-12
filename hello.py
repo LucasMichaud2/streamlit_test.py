@@ -145,7 +145,7 @@ class GAMNED_UAE:
 age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
 age_df = pd.DataFrame(age_list)
 
-objective_list = ['none', 'branding', 'consideration', 'conversion']
+objective_list = ['branding', 'consideration', 'conversion']
 objective_df = pd.DataFrame(objective_list)
 
 target_list = ['b2c', 'b2b']
