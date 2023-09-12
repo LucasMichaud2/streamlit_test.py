@@ -181,7 +181,7 @@ output_rating = df_rating3.head(20)
 heat_map = output_rating.drop(['formats'], axis=1)
 heat_map1 = heat_map.groupby('channel').sum()
 heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
-heat_map3 = heat_map2[selected_objective].round(0)
+heat_map3 = heat_map2[selected_objective].round()
 
 
 #####################################   Pie Chart freq ####################################
