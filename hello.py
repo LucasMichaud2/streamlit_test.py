@@ -147,7 +147,7 @@ def round_5(x):
 color_dictionary = {
     0: '#F1C40F', 5: '#F4D03F', 10: '#F7DC6F', 15: '#F9E79F', 20: '#FAD7A0',
     25: '#F8C471', 30: '#F5B041', 35: '#F39C12', 40: '#E67E22', 45: '#D35400',
-    50: '#EC7063', 55: '#E74C3C', 60: '#CB4335', 65: '#B03A2E', 70: '943126',
+    50: '#EC7063', 55: '#E74C3C', 60: '#CB4335', 65: '#B03A2E', 70: '#943126',
     75: '#78281F', 80: '#8E44AD', 85: '#7D3C98', 90: '#6C3483', 95: '#5B2C6F',
     100: '#4A235A'
 }
@@ -193,7 +193,7 @@ heat_map1 = heat_map.groupby('channel').sum()
 heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
 heat_map3 = heat_map2[selected_objective].apply(round_5)
 
-#heat_map3['mapped_colors'] = heat_map3[selected_objective].map(color_dictionary)
+heat_map3['mapped_colors'] = heat_map3[selected_objective].map(color_dictionary)
 
 
 #####################################   Pie Chart freq ####################################
