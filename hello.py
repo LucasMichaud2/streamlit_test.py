@@ -148,6 +148,9 @@ age_df = pd.DataFrame(age_list)
 objective_list = ['none', 'branding', 'consideration', 'conversion']
 objective_df = pd.DataFrame(objective_list)
 
+target_list = ['b2c', 'b2b']
+target_df = pd.DataFrame(target_list)
+
 st.title('GAMNED Marketing Tool')
 st.text(' ')
 st.subheader('Frequently Used')
@@ -155,6 +158,7 @@ st.sidebar.title('Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.selectbox("Select an age", age_df)
+selected_target = st.sidebar.selectbox('Select target', target_df)
 
 
 # Getting Variables
@@ -164,6 +168,14 @@ df_age = gamned_class.get_age_data()
 df_freq = gamned_class.get_data_freq()
 df_rating = gamned_class.get_mean_rating()
 df_rating1 = gamned_class.get_channel_rating(selected_age, df_age, df_freq, df_rating)
+if selected_target == 'b2b':
+  df_b2b = gamned_class.get_target()
+  df_rating1 = gamned_class.add_target(df_b2b, df_rating1)
+  df_rating1 = df_rating2.reset_index()
+df_rating2 = gamned_class.get_format_rating(df_rating1)
+df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
+output_rating = df_rating3.head(20)
+
 
 
 
@@ -178,7 +190,7 @@ df_freq['conversion'] = df_freq['conversion'].round(1)
 st.bar_chart(data=df_freq, x='channel', y=['branding', 'consideration', 'conversion'])
 
 
-st.dataframe(df_rating1)
+st.dataframe(output_rating)
 
 
 
