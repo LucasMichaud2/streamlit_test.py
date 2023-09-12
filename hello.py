@@ -192,7 +192,7 @@ heat_map = output_rating.drop(['formats'], axis=1)
 heat_map1 = heat_map.groupby('channel').sum()
 heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
 heat_map2[selected_objective] = heat_map2[selected_objective].apply(round_5)
-heatmap2[selected_objective] = heat_map2[selected_objective].astype(int)
+
 #heat_map3['mapped_colors'] = heat_map3[selected_objective].map(color_dictionary)
 
 
