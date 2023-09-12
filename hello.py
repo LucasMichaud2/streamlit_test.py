@@ -193,7 +193,7 @@ heat_map1 = heat_map.groupby('channel').sum()
 heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
 heat_map2[selected_objective] = heat_map2[selected_objective].apply(round_5)
 
-#heat_map3['mapped_colors'] = heat_map3[selected_objective].map(color_dictionary)
+heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
 
 
 #####################################   Pie Chart freq ####################################
