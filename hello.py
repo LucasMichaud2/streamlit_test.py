@@ -9,6 +9,10 @@ df_objective = pd.read_csv(objective_url)
 data_url =  'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/GAMNED_dataset_V2.2.csv'
 df_data = pd.read_csv(data_url)
 
+age_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Global_data-Table%201.csv'
+age_date = pd.read_csv(age_url)
+
+
 
 class GAMNED_UAE:
 
@@ -159,6 +163,8 @@ gamned_class = GAMNED_UAE(df_data, df_objective)
 df_age = gamned_class.get_age_data()
 df_freq = gamned_class.get_data_freq()
 df_rating = gamned_class.get_mean_rating()
+df_rating1 = gamned_class.get_channel_rating(selected_age, df_age, df_freq, df_rating)
+
 
 
 #####################################   Pie Chart freq ####################################
@@ -172,12 +178,11 @@ df_freq['conversion'] = df_freq['conversion'].round(1)
 st.bar_chart(data=df_freq, x='channel', y=['branding', 'consideration', 'conversion'])
 
 
-st.dataframe(df_freq)
+st.dataframe(df_rating1)
 
 
 
-age_list = ['none', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
-age_df = pd.DataFrame(age_list)
+
 
 objective_list = ['none', 'branding', 'consideration', 'conversion']
 objective_df = pd.DataFrame(objective_list)
