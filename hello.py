@@ -176,7 +176,12 @@ df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 output_rating = df_rating3.head(20)
 
+#################################### Building Heatmap ####################################
 
+heat_map = output_rating.drop(['formats'], axis=1)
+heat_map1 = heat_map.groupby('channel').sum()
+heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
+heat_map3 = heat_map2[selected_objective].round(0)
 
 
 #####################################   Pie Chart freq ####################################
@@ -190,14 +195,17 @@ df_freq['conversion'] = df_freq['conversion'].round(1)
 st.bar_chart(data=df_freq, x='channel', y=['branding', 'consideration', 'conversion'])
 
 
+
+
+st.text(' ')
+
+st.subheader('Top Formats')
+
 st.dataframe(output_rating)
 
+st.dataframe(heat_map3)
 
 
-
-
-objective_list = ['none', 'branding', 'consideration', 'conversion']
-objective_df = pd.DataFrame(objective_list)
 
 
 
