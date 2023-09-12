@@ -215,7 +215,7 @@ st.subheader('Top Formats')
 
 st.dataframe(output_rating)
 
-st.dataframe(heat_map3)
+st.dataframe(heat_map2)
 
 
 
