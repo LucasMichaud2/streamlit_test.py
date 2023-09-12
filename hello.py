@@ -244,13 +244,13 @@ st.markdown(
       <div style='background-color:{color0}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name0}</div>
        <div style='background-color:{color1}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'};'>{name1}</div>
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name1}</div>
        <div style='background-color:{color2}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'};'>{name2}</div>
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name2}</div>
        <div style='background-color:{color3}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'};'>{name3}</div>
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name3}</div>
        <div style='background-color:{color4}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'};'>{name4}</div>
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name4}</div>
       
   </div>
   """,
