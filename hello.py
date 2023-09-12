@@ -141,6 +141,8 @@ class GAMNED_UAE:
 
       return total_rating
 
+def round_5(x): 
+  return round(x/5) * 5
 
 age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
 age_df = pd.DataFrame(age_list)
@@ -181,7 +183,7 @@ output_rating = df_rating3.head(20)
 heat_map = output_rating.drop(['formats'], axis=1)
 heat_map1 = heat_map.groupby('channel').sum()
 heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
-heat_map3 = heat_map2[selected_objective].round()
+heat_map3 = heat_map2[selected_objective].apply(round_5)
 
 
 #####################################   Pie Chart freq ####################################
