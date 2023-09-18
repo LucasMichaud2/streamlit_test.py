@@ -224,7 +224,7 @@ heat_map2 = heat_map.head(10)
 
 cost_lib = {
   'channel': ['amazon', 'audio', 'connected tv', 'display', 'dooh', 'facebook', 'in game advertising', 'instagram', 'linkedin', 'native ads', 'search', 'snapchat', 'tiktok', 'twitch', 'twitter', 'waze', 'youtube'],
-        'cost': [5.0, 5.0, 5.0, 1.0, 5.0, 2.9, 5.0, 4.2, 10.7, 5.0, 16.6, 2.6, 5.0, 5.0, 1.8, 5.0, 9.3]  # Adjusted costs per channel
+        'cost': [1.25, 1.25, 1.25, 1, 1.25, 1.12, 1.25, 1.20, 1.6, 1.25, 2, 1.1, 1.25, 1.25, 1.05, 1.25, 1.53]  # Adjusted costs per channel
 }
 
 df_cost = pd.DataFrame(cost_lib)
