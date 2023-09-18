@@ -185,7 +185,7 @@ if selected_target == 'b2b':
   df_rating1 = df_rating1.reset_index()
 df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
-output_rating = df_rating3.head(20)
+#output_rating = df_rating3.head(20)
 
 ################################## Budget Planning DFs ###################################
 
@@ -201,17 +201,21 @@ agg_rating2 = agg_rating1.sort_values(by='channel')
 channel_count2 = channel_count.sort_values(by='channel')
 agg_rating2['average'] = agg_rating2[selected_objective] / channel_count2['count']
 agg_rating3 = agg_rating2.sort_values(by='average', ascending=False)
+agg_rating_min = agg_rating3['average'].min()
+agg_rating_max = agg_rating3['average'].max()
+agg_rating3['average'] = ((agg_rating3['average'] - agg_rating_min) / (agg_rating_max - agg_rating_min))*100
+output_rating = agg_rating3.copy()
                         
 
 #################################### Building Heatmap ####################################
 
-heat_map = output_rating.drop(['formats'], axis=1)
-heat_map1 = heat_map.groupby('channel').sum()
-heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
-heat_map2[selected_objective] = heat_map2[selected_objective].apply(round_5)
+heat_map = output_rating.drop([selected_objective], axis=1)
+#heat_map1 = heat_map.groupby('channel').sum()
+#heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
+heat_map1[selected_objective] = heat_map[selected_objective].apply(round_5)
 
-heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
-heat_map2 = heat_map2.reset_index()
+#heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
+#heat_map2 = heat_map2.reset_index()
 
 ##################################### taking out the code and name ########################
 
