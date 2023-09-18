@@ -214,8 +214,9 @@ heat_map = output_rating.drop([selected_objective], axis=1)
 #heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
 heat_map['average'] = heat_map['average'].apply(round_5)
 
-#heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
-#heat_map2 = heat_map2.reset_index()
+heat_map['mapped_colors'] = heat_map['average'].map(color_dictionary)
+heat_map = heat_map.reset_index()
+heat_map2 = heat_map.head(10)
 
 ##################################### taking out the code and name ########################
 
@@ -229,6 +230,16 @@ name3 = heat_map2.at[3, 'channel']
 color3 = heat_map2.at[3, 'mapped_colors']
 name4 = heat_map2.at[4, 'channel']
 color4 = heat_map2.at[4, 'mapped_colors']
+name5  = heat_map2.at[5, 'channel']
+color5 = heat_map2.at[5, 'mapped_colors']
+name6  = heat_map2.at[6, 'channel']
+color6 = heat_map2.at[6, 'mapped_colors']
+name7  = heat_map2.at[7, 'channel']
+color7 = heat_map2.at[7, 'mapped_colors']
+name8  = heat_map2.at[8, 'channel']
+color8 = heat_map2.at[8, 'mapped_colors']
+name9  = heat_map2.at[9, 'channel']
+color9 = heat_map2.at[9, 'mapped_colors']
 
 
 #####################################   Pie Chart freq ####################################
@@ -272,7 +283,16 @@ st.markdown(
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name3}</div>
        <div style='background-color:{color4}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name4}</div>
-      
+      <div style='background-color:{color5}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name5}</div>
+      <div style='background-color:{color6}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name6}</div>
+      <div style='background-color:{color7}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name7}</div>
+      <div style='background-color:{color8}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name8}</div>
+      <div style='background-color:{color9}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name9}</div>
   </div>
   """,
   unsafe_allow_html=True
