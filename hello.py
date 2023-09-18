@@ -187,6 +187,14 @@ df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 output_rating = df_rating3.head(20)
 
+################################## Budget Planning DFs ###################################
+
+channel_count = pd.DataFrame(df_rating3.groupby('channel')['formats'].count())
+channel_count = channel_count.reset_index()
+col_names = ['channel', 'count']
+channel_count.columns = col_names
+                        
+
 #################################### Building Heatmap ####################################
 
 heat_map = output_rating.drop(['formats'], axis=1)
@@ -257,5 +265,7 @@ st.markdown(
   """,
   unsafe_allow_html=True
 )
+
+st.DataFrame(channel_count)
 
 
