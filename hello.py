@@ -229,6 +229,7 @@ cost_lib = {
 
 df_cost = pd.DataFrame(cost_lib)
 
+cost_rating = cost_rating.drop([selected_objective], axis=1)
 cost_rating = cost_rating.sort_values(by='channel')
 cost_rating = cost_rating.reset_index()
 
