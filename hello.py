@@ -195,7 +195,7 @@ col_names = ['channel', 'count']
 channel_count.columns = col_names
 
 agg_rating = df_rating3.drop(['formats'], axis=1)
-agg_rating1 = agg_ratong.groupby('channel').sum()
+agg_rating1 = agg_rating.groupby('channel').sum()
 agg_rating1 = agg_rating1.reset_index()
 agg_rating2 = agg_rating1.sort_values(by='channel')
 channel_count2 = channel_count.sort_values(by='channel')
