@@ -233,6 +233,8 @@ cost_rating = cost_rating.drop([selected_objective], axis=1)
 cost_rating = cost_rating.sort_values(by='channel')
 cost_rating = cost_rating.reset_index()
 
+df_cost['average'] = cost_rating['average']
+
 
 
 ##################################### taking out the code and name ########################
@@ -318,6 +320,6 @@ st.markdown(
 
 st.dataframe(agg_rating3)
 
-st.dataframe(cost_rating)
+st.dataframe(df_cost)
 
 
