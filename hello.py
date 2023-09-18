@@ -200,6 +200,7 @@ agg_rating1 = agg_rating1.reset_index()
 agg_rating2 = agg_rating1.sort_values(by='channel')
 channel_count2 = channel_count.sort_values(by='channel')
 agg_rating2['average'] = agg_rating2[selected_objective] / channel_count2['count']
+agg_rating3 = agg_rating2.sort_values(by='average', ascending=False)
                         
 
 #################################### Building Heatmap ####################################
@@ -275,6 +276,6 @@ st.markdown(
 
 st.dataframe(channel_count)
 
-st.dataframe(agg_rating2)
+st.dataframe(agg_rating3)
 
 
