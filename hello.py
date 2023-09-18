@@ -187,7 +187,7 @@ df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 #output_rating = df_rating3.head(20)
 
-################################## Budget Planning DFs ###################################
+################################## Computing Scores ###################################
 
 channel_count = pd.DataFrame(df_rating3.groupby('channel')['formats'].count())
 channel_count = channel_count.reset_index()
@@ -201,6 +201,7 @@ agg_rating2 = agg_rating1.sort_values(by='channel')
 channel_count2 = channel_count.sort_values(by='channel')
 agg_rating2['average'] = agg_rating2[selected_objective] / channel_count2['count']
 agg_rating3 = agg_rating2.sort_values(by='average', ascending=False)
+cost_rating = agg_rating3.copy()
 agg_rating_min = agg_rating3['average'].min()
 agg_rating_max = agg_rating3['average'].max()
 agg_rating3['average'] = ((agg_rating3['average'] - agg_rating_min) / (agg_rating_max - agg_rating_min))*100
@@ -217,6 +218,18 @@ heat_map['average'] = heat_map['average'].apply(round_5)
 heat_map['mapped_colors'] = heat_map['average'].map(color_dictionary)
 heat_map = heat_map.reset_index()
 heat_map2 = heat_map.head(10)
+
+
+##################################### Buidling Budget #####################################
+
+cost_lib = {
+  'channel': ['amazon', 'audio', 'connected tv', 'display', 'dooh', 'facebook', 'in game advertising', 'instagram', 'linkedin', 'native ads', 'search', 'snapchat', 'tiktok', 'twitch', 'twitter', 'waze', 'youtube'],
+        'cost': [5.0, 5.0, 5.0, 1.0, 5.0, 2.9, 5.0, 4.2, 10.7, 5.0, 16.6, 2.6, 5.0, 5.0, 1.8, 5.0, 9.3]  # Adjusted costs per channel
+}
+
+df_cost = pd.DataFrame(cost_lib)
+
+
 
 ##################################### taking out the code and name ########################
 
@@ -298,8 +311,9 @@ st.markdown(
   unsafe_allow_html=True
 )
 
-st.dataframe(channel_count)
 
 st.dataframe(agg_rating3)
+
+st.dataframe(cost_rating)
 
 
