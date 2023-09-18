@@ -212,7 +212,7 @@ output_rating = agg_rating3.copy()
 heat_map = output_rating.drop([selected_objective], axis=1)
 #heat_map1 = heat_map.groupby('channel').sum()
 #heat_map2= heat_map1.sort_values(by=selected_objective, ascending=False)
-heat_map[selected_objective] = heat_map[selected_objective].apply(round_5)
+heat_map['average'] = heat_map['average'].apply(round_5)
 
 #heat_map2['mapped_colors'] = heat_map2[selected_objective].map(color_dictionary)
 #heat_map2 = heat_map2.reset_index()
