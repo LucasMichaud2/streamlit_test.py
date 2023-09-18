@@ -266,6 +266,6 @@ st.markdown(
   unsafe_allow_html=True
 )
 
-st.DataFrame(channel_count)
+st.dataframe(channel_count)
 
 
