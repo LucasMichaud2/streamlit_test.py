@@ -193,6 +193,13 @@ channel_count = pd.DataFrame(df_rating3.groupby('channel')['formats'].count())
 channel_count = channel_count.reset_index()
 col_names = ['channel', 'count']
 channel_count.columns = col_names
+
+agg_rating = df_rating3.drop(['formats'], axis=1)
+agg_rating1 = agg_ratong.groupby('channel').sum()
+agg_rating1 = agg_rating1.reset_index()
+agg_rating2 = agg_rating1.sort_values(by='channel')
+channel_count2 = channel_count.sort_values(by='channel')
+agg_rating2['average'] = agg_rating2[selected_objective] / channel_count2['count']
                         
 
 #################################### Building Heatmap ####################################
@@ -267,5 +274,7 @@ st.markdown(
 )
 
 st.dataframe(channel_count)
+
+st.dataframe(agg_rating2)
 
 
