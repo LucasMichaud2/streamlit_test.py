@@ -240,6 +240,9 @@ df_cost_std = df_cost1['ratio'].std()
 df_cost_mean = df_cost1['ratio'].mean()
 df_cost1['norm'] = (df_cost1['ratio'] - df_cost_mean) - df_cost_std
 
+df_selection = df_cost1[df_cost1['norm'] > 0]
+
+
 
 
 ##################################### taking out the code and name ########################
@@ -326,5 +329,7 @@ st.markdown(
 st.dataframe(agg_rating3)
 
 st.dataframe(df_cost1)
+
+st.dataframe(df_selection)
 
 
