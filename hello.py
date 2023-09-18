@@ -236,6 +236,9 @@ cost_rating = cost_rating.reset_index()
 df_cost['average'] = cost_rating['average']
 df_cost['ratio'] = df_cost['average'] / df_cost['cost']
 df_cost1 = df_cost.sort_values(by='ratio', ascending=False)
+df_cost_std = df_cost1['ratio'].std()
+df_cost_mean = df_cost1['ratio'].mean()
+df_cost1['norm'] = (df_cost1['ratio'] - df_cost_mean) - df_cost_std
 
 
 
