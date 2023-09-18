@@ -234,6 +234,8 @@ cost_rating = cost_rating.sort_values(by='channel')
 cost_rating = cost_rating.reset_index()
 
 df_cost['average'] = cost_rating['average']
+df_cost['ratio'] = df_cost['average'] / df_cost['cost']
+df_cost1 = df_cost.sort_values(by='ratio', ascending=False)
 
 
 
@@ -320,6 +322,6 @@ st.markdown(
 
 st.dataframe(agg_rating3)
 
-st.dataframe(df_cost)
+st.dataframe(df_cost1)
 
 
