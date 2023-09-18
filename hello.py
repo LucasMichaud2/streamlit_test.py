@@ -169,6 +169,7 @@ st.sidebar.title('Parameters')
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.selectbox("Select an age", age_df)
 selected_target = st.sidebar.selectbox('Select target', target_df)
+input_budget = st.sidebar.text_input('Budget')
 
 
 # Getting Variables
