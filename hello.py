@@ -236,8 +236,8 @@ average_max = df_budget['average'].max()
 average_min = df_budget['average'].min()
 average_diff = average_max - average_min
 df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
-df_budget['distribution'].fillna(0, inplace=True)
-df_budget['distribution'] = df_budget['distribution'].round(2)
+
+#df_budget['distribution'] = df_budget['distribution'].round(2)
 df_budget['allowance'] = input_budget * df_budget['distribution']
 columns_to_drop = ['average', 'index', 'norm', 'distribution']
 df_allowance = df_budget.drop(columns=columns_to_drop)
