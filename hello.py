@@ -344,7 +344,8 @@ with st.beta_container():
 
 st.text(' ')
 
-st.markdown(
+with st.beta_container():
+  st.markdown(
   f"""
   <div style='display: flex;'>
       <div style='background-color:{color5}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
