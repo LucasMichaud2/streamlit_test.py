@@ -253,9 +253,16 @@ if input_budget < 4001 and selected_objective == 'consideration':
     'allowance': [disp_allow, 500]
   }
   df_allowance = pd.DataFrame(budget_lib1)
+  
 elif input_budget < 4001:
   df_allowance = df_allowance.head(1)
   df_allowance.at[0, 'allowance'] = input_budget
+  
+elif input_budget < 70001 and input_budget > 5001:
+  if df_allowance.shape[0] > 3:
+    df_budget = df_budget.head(3)
+    df_budget['allowance'] = input_budget * df_budget['distribution']
+    df_allowance = df_budget.drop(columns=columns_to_drop)
 
   
 
