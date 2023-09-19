@@ -237,10 +237,7 @@ average_min = df_budget['average'].min()
 average_diff = average_max - average_min
 df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
 df_budget['allowance'] = input_budget * df_budget['distribution']
-# Assuming you want to drop columns 'average', 'index', 'norm', and 'distribution'
 columns_to_drop = ['average', 'index', 'norm', 'distribution']
-
-# Drop the specified columns from the DataFrame
 df_allowance = df_budget.drop(columns=columns_to_drop)
 
 # df_allowance now contains the DataFrame with the specified columns dropped
@@ -248,8 +245,13 @@ df_allowance = df_budget.drop(columns=columns_to_drop)
 
 ##################################### Budget Rules ########################################
 
-#if input_budget < 4001 & selected_objective == 'consideration':
-  #budget_lib1 = {
+if input_budget < 4001 & selected_objective == 'consideration':
+  disp_allow = input_budget - 500
+  budget_lib1 = {
+    'channel': ['display', 'search'],
+    'allowance': [disp_allow, 500]
+  }
+  df_allowance = pd.DataFrame(budget_lib1)
 
   
 
