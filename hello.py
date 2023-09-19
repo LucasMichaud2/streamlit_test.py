@@ -322,8 +322,8 @@ st.subheader("Heatmap")
 
 
 
-
-st.markdown(
+with st.beta_container():
+  st.markdown(
   f"""
   <div style='display: flex;'>
       <div style='background-color:{color0}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
@@ -340,6 +340,7 @@ st.markdown(
   """,
   unsafe_allow_html=True
 )
+
 
 st.text(' ')
 
