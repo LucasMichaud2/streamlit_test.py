@@ -253,8 +253,8 @@ if input_budget < 4001 and selected_objective == 'consideration':
   }
   df_allowance = pd.DataFrame(budget_lib1)
 elif input_budget < 4001:
-  df_allowance = df_allowance.iloc[0]
-  df_allowance['allowance'] = input_budget
+  df_allowance = df_allowance..head(1)
+  df_allowance.at[0, 'allowance'] = input_budget
 
   
 
