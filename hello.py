@@ -223,7 +223,7 @@ heat_map2 = heat_map.head(10)
 ##################################### Buidling Budget #####################################
 
 cost_rating = cost_rating.drop([selected_objective], axis=1)
-cost_rating = cost_rating.sort_values(by='average')
+cost_rating = cost_rating.sort_values(by='average', ascending=False)
 cost_rating = cost_rating.reset_index()
 
 
