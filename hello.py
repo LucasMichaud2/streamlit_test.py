@@ -232,13 +232,11 @@ threshold = cost_rating['norm'].max() - 0.50*cost_rating['norm'].max()
 df_selection = cost_rating[cost_rating['norm'] > threshold]
 
 df_budget = df_selection.copy()
-df_budget['average'] = df_budget['average'].round(2)
 average_max = df_budget['average'].max()
 average_min = df_budget['average'].min()
 average_diff = average_max - average_min
 df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
-
-
+df_budget['distribution'].round(1)
 df_budget['allowance'] = input_budget * df_budget['distribution']
 columns_to_drop = ['average', 'index', 'norm', 'distribution']
 df_allowance = df_budget.drop(columns=columns_to_drop)
