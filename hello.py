@@ -320,6 +320,8 @@ st.markdown(
 
 st.dataframe(agg_rating3)
 
+st.text(threshold)
+
 st.dataframe(cost_rating)
 
 st.dataframe(df_selection)
