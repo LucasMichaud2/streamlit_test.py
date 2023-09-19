@@ -235,7 +235,7 @@ df_budget = df_selection.copy()
 average_max = df_budget['average'].max()
 average_min = df_budget['average'].min()
 average_diff = average_max - average_min
-df_budget['average'] = df_budget['average'] / average_diff
+df_budget['average'] = df_budget['average'] / df_budget['average'].sum()
 
 
 
