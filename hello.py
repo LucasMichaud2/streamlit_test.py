@@ -222,25 +222,12 @@ heat_map2 = heat_map.head(10)
 
 ##################################### Buidling Budget #####################################
 
-cost_lib = {
-  'channel': ['amazon', 'audio', 'connected tv', 'display', 'dooh', 'facebook', 'in game advertising', 'instagram', 'linkedin', 'native ads', 'search', 'snapchat', 'tiktok', 'twitch', 'twitter', 'waze', 'youtube'],
-        'cost': [1.25, 1.25, 1.25, 1, 1.25, 1.12, 1.25, 1.20, 1.6, 1.25, 1.2, 1.1, 1.25, 1.25, 1.05, 1.25, 1.2]  # Adjusted costs per channel
-}
-
-df_cost = pd.DataFrame(cost_lib)
-
 cost_rating = cost_rating.drop([selected_objective], axis=1)
-cost_rating = cost_rating.sort_values(by='channel')
+cost_rating = cost_rating.sort_values(by='average')
 cost_rating = cost_rating.reset_index()
 
-df_cost['average'] = cost_rating['average']
-df_cost['ratio'] = df_cost['average'] / df_cost['cost']
-df_cost1 = df_cost.sort_values(by='ratio', ascending=False)
-df_cost_std = df_cost1['ratio'].std()
-df_cost_mean = df_cost1['ratio'].mean()
-df_cost1['norm'] = (df_cost1['ratio'] - df_cost_mean) - df_cost_std
 
-df_selection = df_cost1[df_cost1['norm'] > 0]
+#df_selection = df_cost1[df_cost1['norm'] > 0]
 
 
 
@@ -330,6 +317,6 @@ st.dataframe(agg_rating3)
 
 st.dataframe(cost_rating)
 
-st.dataframe(df_selection)
+
 
 
