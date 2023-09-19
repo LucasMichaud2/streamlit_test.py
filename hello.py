@@ -229,7 +229,7 @@ cost_rating_std = cost_rating['average'].std()
 cost_rating_mean = cost_rating['average'].mean()
 cost_rating['norm'] = (cost_rating['average'] - cost_rating_mean) / cost_rating_std
 threshold = cost_rating['norm'].max() - 0.25*cost_rating['norm']
-df_selection = cost_rating[cost_rating['norm'] > threshhold]
+df_selection = cost_rating[cost_rating['norm'] > threshold]
 
 
 #df_selection = df_cost1[df_cost1['norm'] > 0]
