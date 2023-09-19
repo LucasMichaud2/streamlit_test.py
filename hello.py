@@ -378,3 +378,16 @@ st.dataframe(df_allowance)
 
 
 
+with st.container():
+  # HTML code for a simple pie chart
+pie_chart_html = """
+<div style="width: 200px; height: 200px; background-color: white; border-radius: 50%; position: relative;">
+  <div style="position: absolute; width: 100%; height: 100%; clip-path: polygon(0 0, 100% 0, 100% 100%); background-color: #FF5733; transform: rotate(45deg);"></div>
+</div>
+"""
+
+# Display the pie chart using st.write
+st.write(pie_chart_html, unsafe_allow_html=True)
+
+
+
