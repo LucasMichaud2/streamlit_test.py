@@ -245,7 +245,7 @@ df_allowance = df_budget.drop(columns=columns_to_drop)
 
 ##################################### Budget Rules ########################################
 
-if input_budget < 4001 & selected_objective == 'consideration':
+if input_budget < 4001 and selected_objective == 'consideration':
   disp_allow = input_budget - 500
   budget_lib1 = {
     'channel': ['display', 'search'],
