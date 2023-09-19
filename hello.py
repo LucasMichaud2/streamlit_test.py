@@ -228,6 +228,8 @@ cost_rating = cost_rating.reset_index()
 cost_rating_std = cost_rating['average'].std()
 cost_rating_mean = cost_rating['average'].mean()
 cost_rating['norm'] = (cost_rating['average'] - cost_rating_mean) / cost_rating_std
+quantiles = cost_rating['norm'].quantile([0.25])
+quantiles = pd.DataFrame(quantiles)
 
 
 #df_selection = df_cost1[df_cost1['norm'] > 0]
@@ -319,6 +321,8 @@ st.markdown(
 st.dataframe(agg_rating3)
 
 st.dataframe(cost_rating)
+
+st.dataframe(quantiles)
 
 
 
