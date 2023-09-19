@@ -237,10 +237,14 @@ average_min = df_budget['average'].min()
 average_diff = average_max - average_min
 df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
 df_budget['allowance'] = input_budget * df_budget['distribution']
+df_allowance = df_budget.drop([['average', 'index', 'norm', 'distribution']], axis=1)
 
+##################################### Budget Rules ########################################
 
+#if input_budget < 4001 & selected_objective == 'consideration':
+  #budget_lib1 = {
 
-#df_selection = df_cost1[df_cost1['norm'] > 0]
+  
 
 
 
@@ -336,6 +340,7 @@ st.dataframe(cost_rating)
 
 st.dataframe(df_budget)
 
+st.dataframe(df_allowance)
 
 
 
