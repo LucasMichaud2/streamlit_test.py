@@ -231,6 +231,13 @@ cost_rating['norm'] = (cost_rating['average'] - cost_rating_mean) / cost_rating_
 threshold = cost_rating['norm'].max() - 0.50*cost_rating['norm'].max()
 df_selection = cost_rating[cost_rating['norm'] > threshold]
 
+df_budget = df_selection.copy()
+average_max = df_budget['average'].max()
+average_min = df_budget['average'].min()
+average_diff = average_max - average_min
+df_budget['average'] = df_budget['average'] / average_diff
+
+
 
 #df_selection = df_cost1[df_cost1['norm'] > 0]
 
@@ -326,7 +333,7 @@ st.text(threshold)
 
 st.dataframe(cost_rating)
 
-st.dataframe(df_selection)
+st.dataframe(df_budget)
 
 
 
