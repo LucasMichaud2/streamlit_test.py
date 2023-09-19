@@ -322,7 +322,7 @@ st.subheader("Heatmap")
 
 
 
-with st.beta_container():
+with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
@@ -344,7 +344,7 @@ with st.beta_container():
 
 st.text(' ')
 
-with st.beta_container():
+with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
