@@ -328,7 +328,7 @@ st.markdown(
 
 st.dataframe(agg_rating3)
 
-st.dataframe(cost_rating)
+st.dataframe(output_rating)
 
 st.dataframe(df_selection)
 
