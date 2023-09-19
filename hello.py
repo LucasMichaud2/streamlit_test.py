@@ -379,28 +379,36 @@ st.dataframe(df_allowance)
 
 
 with st.container():
-    # Define the values for the pie chart segments
+   
+
+  # Define the values for the pie chart segments
   values = [30, 20, 15, 10, 25]  # These should add up to 100 for a proper pie chart
   
-  # Define colors for the segments
-  colors = ['#FF5733', '#33FF57', '#5733FF', '#FFFF33', '#33FFFF']
-  
-  # Calculate the angles for the segments
-  total = sum(values)
-  angles = [360 * value / total for value in values]
+  # Define labels for the segments
+  labels = ["Segment 1", "Segment 2", "Segment 3", "Segment 4", "Segment 5"]
   
   # Create the HTML code for the pie chart
   pie_chart_html = """
-  <div style="width: 200px; height: 200px; background-color: white; border-radius: 50%; position: relative;">
+  <div style="width: 300px; height: 300px; position: relative;">
   """
   
   start_angle = 0
+  total = sum(values)
   
-  for i, angle in enumerate(angles):
-      # Create a segment for each value
+  for i, (value, label) in enumerate(zip(values, labels)):
+      # Calculate the angle for the segment
+      angle = 360 * value / total
+  
+      # Create a segment with a label
       pie_chart_html += f"""
-      <div style="position: absolute; width: 100%; height: 100%; clip-path: polygon(0 0, 100% 0, 100% 100%); 
-      background-color: {colors[i]}; transform: rotate({start_angle}deg);"></div>
+      <div style="position: absolute; width: 100%; height: 100%;">
+          <div style="position: absolute; width: 100%; height: 100%; clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+                      background-color: {'#FF5733'}; transform: rotate({start_angle}deg);"></div>
+          <div style="position: absolute; width: 100%; height: 100%; clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+                      background-color: {'transparent'}; transform: rotate({start_angle + angle/2}deg); text-align: center;">
+              <span style="font-size: 12px;">{label}</span>
+          </div>
+      </div>
       """
       start_angle += angle
   
