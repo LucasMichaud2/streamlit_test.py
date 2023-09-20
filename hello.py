@@ -28,7 +28,12 @@ class GAMNED_UAE:
                    '13-17, 18-24, 25-34, 35-44, 45-54', 
                    '13-17, 18-24, 25-34, 35-44, 45-54, 55-64', 
                    '13-17, 18-24, 25-34, 35-44, 45-54, 55-64, 65+', 
-                   'all']
+                   'all',
+                   '18-24, 25-34', 
+                   '18-24, 25-34, 35-44', 
+                   '18-24, 25-34, 35-44, 45-54', 
+                   '18-24, 25-34, 35-44, 45-54, 55-64',
+                   '18-24, 25-34, 35-44, 45-54, 55-64, 65+']
     col1 = ['instagram', 'facebook', 'linkedin', 'snapchat', 'youtube']
     col2 = [8, 4.7, 0, 20, 0]
     col3 = [31, 21.5, 21.7, 38.8, 15]
@@ -43,6 +48,12 @@ class GAMNED_UAE:
     col12 = [x + y for x, y in zip(col11, col6)]
     col13 = [x + y for x, y in zip(col12, col7)]
     col14 = [x + y for x, y in zip(col13, col8)]
+    col15 = [x + y for x, y in zip(col3, col4)]
+    col16 = [x + y for x, y in zip(col15, col5)]
+    col17 = [x + y for x, y in zip(col6, col6)]
+    col18 = [x + y for x, y in zip(col17, col7)]
+    col19 = [x + y for x, y in zip(col8, col8)]
+    
     
 
     df_age = pd.DataFrame(col1, columns = ['channel'])
@@ -60,6 +71,12 @@ class GAMNED_UAE:
     df_age['13-17, 18-24, 25-34, 35-44, 45-54, 55-64'] = col13
     df_age['13-17, 18-24, 25-34, 35-44, 45-54, 55-64, 65+'] = col14
     df_age['all'] = col14
+    df_age['18-24, 25-34'] = col15
+    df_age['18-24, 25-34, 35-44'] = col16
+    df_age['18-24, 25-34, 35-44, 45-54'] = col17
+    df_age['18-24, 25-34, 35-44, 45-54, 55-64'] = col18
+    df_age['18-24, 25-34, 35-44, 45-54, 55-64, 65+'] = col19
+    
       
     
     return df_age
