@@ -507,6 +507,8 @@ ax4.pie(df_allowance['allowance'], labels=df_allowance['channel'], autopct='%1.1
 center_circle = plt.Circle((0,0), 0.7, fc='white')
 fig4.gca().add_artist(center_circle)
 
+middle_text = ax4.text(0, 0, f"Total: {input_budget} USD", ha='center', va='center', fontsize=12, color='black', weight='bold')
+
 ax4.set_title('Budget Allocation')
 
 ax4.axis('equal')
