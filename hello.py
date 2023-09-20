@@ -236,7 +236,7 @@ st.subheader('Frequently Used')
 st.sidebar.title('Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
-selected_age = st.sidebar.multiselect("Select an age", age_df, default='None')
+selected_age = st.sidebar.multiselect("Select an age", age_df)
 selected_age = ', '.join(selected_age)
 selected_target = st.sidebar.selectbox('Select target', target_df)
 input_budget = st.sidebar.number_input('Budget', value=0)
