@@ -443,21 +443,29 @@ st.subheader('Budget Allocation')
 
 st.dataframe(df_allowance)
 
+st.dataframe(df_freq)
 
 
 
-# Sample data for the pie chart
-labels = 'Category A', 'Category B', 'Category C'
-sizes = [15, 30, 45]  # Values representing the size of each category
-colors = ['gold', 'lightcoral', 'lightskyblue']
+
+
+# Sample DataFrame
+
+data = {
+    'Category': ['Category A', 'Category B', 'Category C'],
+    'Value': [15, 30, 45]
+}
+
+df = pd.DataFrame(data)
 
 # Create a pie chart
 fig, ax = plt.subplots()
-ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+ax.pie(df['Value'], labels=df['Category'], autopct='%1.1f%%', startangle=90)
 ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
 
 # Display the pie chart in Streamlit
 st.pyplot(fig)
+
 
 
 
