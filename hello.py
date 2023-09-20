@@ -501,6 +501,17 @@ st.subheader('Budget Allocation')
 
 st.dataframe(df_allowance)
 
+fig4, ax4 = plt.subplots()
+ax4.pie(df_allowance['allowance'], labels=df_allowance['channel'], atopct='%1.1f%%', startangle=90, wedgeprops=dict(width=0.4), colors=custom_colors1)
+
+center_circle = plt.Circle((0,0), 0.7, fc='white')
+fig4.gca().add_artist(center_circle)
+
+ax4.set_title('Budget Allocation')
+
+ax4.axis('equal')
+
+st.pyplot(fig4)
 
 
 
