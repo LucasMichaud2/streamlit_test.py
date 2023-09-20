@@ -464,7 +464,7 @@ pie1, pie2, pie3 = st.columns(3)
 with pie1:
 
   fig1, ax1 = plt.subplots()
-  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90, colors=custom_colors1, labeldistance=2)
+  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90, colors=custom_colors1)
   ax1.axis('equal')
   st.pyplot(fig1)
   st.markdown(
@@ -509,6 +509,9 @@ with pie3:
 
 # Sample DataFrame
 
+
+
+# Sample DataFrame
 data = {
     'Category': ['Category A', 'Category B', 'Category C'],
     'Value': [15, 30, 45]
@@ -516,13 +519,35 @@ data = {
 
 df = pd.DataFrame(data)
 
+# Define a custom color palette with shades of red
+custom_colors = sns.color_palette('Reds', n_colors=len(df))
+
 # Create a pie chart
 fig, ax = plt.subplots()
-ax.pie(df['Value'], labels=df['Category'], autopct='%1.1f%%', startangle=90)
+wedges, texts, autotexts = ax.pie(
+    df['Value'],
+    labels=None,
+    autopct='',
+    startangle=90,
+    colors=custom_colors,
+    pctdistance=0.85
+)
 ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
+
+# Manually add labels outside the pie chart with orientations
+label_positions = [1.15, 1.2, 1.25]  # Adjust the radial distances as needed
+for i, label in enumerate(df['Category']):
+    angle = (wedges[i].theta2 + wedges[i].theta1) / 2.0
+    x = label_positions[i] * wedges[i].r * 1.1 * plt.cos(angle * np.pi / 180)
+    y = label_positions[i] * wedges[i].r * 1.1 * plt.sin(angle * np.pi / 180)
+    plt.text(x, y, label, ha="center", va="center")
+
+# Add a title to the pie chart
+ax.set_title('My Pie Chart')
 
 # Display the pie chart in Streamlit
 st.pyplot(fig)
+
 
 
 
