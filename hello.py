@@ -447,14 +447,36 @@ st.dataframe(df_freq)
 
 df_brand = df_freq[['channel', 'branding']]
 df_brand = df_brand.dropna()
+df_cons = df_freq[['channel', 'consideration']]
+df_cons = df_cons.dropna()
+df_conv = df_freq[['channel', 'conversion']]
+df_conv = df_conv.dropna()
+
 
 st.dataframe(df_brand)
 
+pie1, pie2, pie3 = st.columns(3)
 
-fig1, ax1 = plt.subplots()
-ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90)
-ax1.axis('equal')
-st.pyplot(fig1)
+with pie1:
+
+  fig1, ax1 = plt.subplots()
+  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90)
+  ax1.axis('equal')
+  st.pyplot(fig1)
+
+with pie2:
+  
+  fig2, ax2 = plt.subplots()
+  ax2.pie(df_cons['consideration'], labels=df_cons['channel'], autopct='%1.1f%%', startangle=90)
+  ax2.axis('equal')
+  st.pyplot(fig2)
+
+with pie3:
+  
+  fig3, ax3 = plt.subplots()
+  ax3.pie(df_conv['conversion'], labels=df_conv['channel'], autopct='%1.1f%%', startangle=90)
+  ax3.axis('equal')
+  st.pyplot(fig3)
 
 # Sample DataFrame
 
