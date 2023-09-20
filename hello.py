@@ -23,7 +23,7 @@ class GAMNED_UAE:
     self.obj_list = ['branding', 'consideration', 'conversion']
 
   def get_age_data(self):
-    column_names = ['channel', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+    column_names = ['channel', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+', '13-17, 18-24']
     col1 = ['instagram', 'facebook', 'linkedin', 'snapchat', 'youtube']
     col2 = [8, 4.7, 0, 20, 0]
     col3 = [31, 21.5, 21.7, 38.8, 15]
@@ -32,6 +32,7 @@ class GAMNED_UAE:
     col6 = [8, 11.6, 5.4, 3.8, 11.9]
     col7 = [4, 7.2, 2.9, 0, 8.8]
     col8 = [3, 5.6, 0, 0, 9]
+    col9 = [39, 26.2, 21.7, 58.8, 15]
 
     df_age = pd.DataFrame(col1, columns = ['channel'])
     df_age['13-17'] = col2
@@ -41,6 +42,7 @@ class GAMNED_UAE:
     df_age['45-54'] = col6
     df_age['55-64'] = col7
     df_age['65+'] = col8
+    df_age['13-17, 18-24'] = col9
 
     return df_age
 
