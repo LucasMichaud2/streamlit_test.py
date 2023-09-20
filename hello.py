@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import seaborn
+import seaborn as sns
 import matplotlib.pyplot as plt
 
 
@@ -451,6 +451,7 @@ df_cons = df_freq[['channel', 'consideration']]
 df_cons = df_cons.dropna()
 df_conv = df_freq[['channel', 'conversion']]
 df_conv = df_conv.dropna()
+custom_colors = sns.color_palette('Blues', n_colors=len(df_brand))
 
 
 st.dataframe(df_brand)
@@ -460,7 +461,7 @@ pie1, pie2, pie3 = st.columns(3)
 with pie1:
 
   fig1, ax1 = plt.subplots()
-  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90)
+  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90, colors=custom_colors)
   ax1.axis('equal')
   st.pyplot(fig1)
 
