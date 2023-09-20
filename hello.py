@@ -445,7 +445,10 @@ st.dataframe(df_allowance)
 
 st.dataframe(df_freq)
 
+df_brand = df_freq[['channel', 'branding']]
+df_brand = df_brand.dropna()
 
+st.dataframe(df_brand)
 
 
 
