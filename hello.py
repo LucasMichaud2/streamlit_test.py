@@ -44,7 +44,7 @@ class GAMNED_UAE:
                    '45-54, 55-64', 
                    '45-54, 55-64, 65+',
                    '55-64, 65+',
-                   'None']
+                   '']
     col1 = ['instagram', 'facebook', 'linkedin', 'snapchat', 'youtube']
     col2 = [8, 4.7, 0, 20, 0]
     col3 = [31, 21.5, 21.7, 38.8, 15]
@@ -109,7 +109,7 @@ class GAMNED_UAE:
     df_age['45-54, 55-64'] = col27
     df_age['45-54, 55-64, 65+'] = col28
     df_age['55-64, 65+'] = col29
-    df_age['None'] = col30
+    df_age[''] = col30
     
     return df_age
 
