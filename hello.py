@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import seaborn
+import matplotlib.pyplot as plt
 
 
 objective_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Objectives_updated-Table%201.csv'
@@ -441,6 +442,23 @@ st.subheader('Budget Allocation')
 
 
 st.dataframe(df_allowance)
+
+
+
+
+# Sample data for the pie chart
+labels = 'Category A', 'Category B', 'Category C'
+sizes = [15, 30, 45]  # Values representing the size of each category
+colors = ['gold', 'lightcoral', 'lightskyblue']
+
+# Create a pie chart
+fig, ax = plt.subplots()
+ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90)
+ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
+
+# Display the pie chart in Streamlit
+st.pyplot(fig)
+
 
 
 
