@@ -174,6 +174,8 @@ selected_age = ','.join(selected_age)
 selected_target = st.sidebar.selectbox('Select target', target_df)
 input_budget = st.sidebar.number_input('Budget', value=0)
 
+st.subheader(selected_age)
+
 
 # Getting Variables
 
