@@ -464,7 +464,7 @@ pie1, pie2, pie3 = st.columns(3)
 with pie1:
 
   fig1, ax1 = plt.subplots()
-  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90, colors=custom_colors1, labeldistance=1.15)
+  ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90, colors=custom_colors1, labeldistance=2)
   ax1.axis('equal')
   st.pyplot(fig1)
   st.markdown(
