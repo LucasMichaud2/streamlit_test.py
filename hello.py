@@ -40,7 +40,10 @@ class GAMNED_UAE:
                    '25-34, 35-44, 45-54, 55-64, 65+',
                    '35-44, 45-54', 
                    '35-44, 45-54, 55-64', 
-                   '35-44, 45-54, 55-64, 65+']
+                   '35-44, 45-54, 55-64, 65+', 
+                   '45-54, 55-64', 
+                   '45-54, 55-64, 65+',
+                   '55-64, 65+']
     col1 = ['instagram', 'facebook', 'linkedin', 'snapchat', 'youtube']
     col2 = [8, 4.7, 0, 20, 0]
     col3 = [31, 21.5, 21.7, 38.8, 15]
@@ -67,6 +70,10 @@ class GAMNED_UAE:
     col24 = [x + y for x, y in zip(col5, col6)]
     col25 = [x + y for x, y in zip(col24, col7)]
     col26 = [x + y for x, y in zip(col25, col8)]
+    col27 = [x + y for x, y in zip(col6, col7)]
+    col28 = [x + y for x, y in zip(col27, col8)]
+    col29 = [x + y for x, y in zip(col7, col8)]
+    
     
     
 
@@ -97,6 +104,10 @@ class GAMNED_UAE:
     df_age['35-44, 45-54'] = col24
     df_age['35-44, 45-54, 55-64'] = col25
     df_age['35-44, 45-54, 55-64, 65+'] = col26
+    df_age['45-54, 55-64'] = col27
+    df_age['45-54, 55-64, 65+'] = col28
+    df_age['55-64, 65+'] = col29
+    
     return df_age
 
 
