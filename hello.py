@@ -259,7 +259,7 @@ if selected_target == 'b2b':
   df_rating1 = df_rating1.reset_index()
 df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
-#output_rating = df_rating3.head(20)
+format_rating = df_rating3.head(20)
 
 ################################## Computing Scores ###################################
 
@@ -444,7 +444,7 @@ st.text(' ')
 
 st.subheader('Top Formats')
 
-st.dataframe(output_rating)
+st.dataframe(format_rating)
 
 
 st.text(' ')
