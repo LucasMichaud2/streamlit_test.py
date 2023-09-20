@@ -507,50 +507,6 @@ with pie3:
         unsafe_allow_html=True
     )
 
-# Sample DataFrame
-
-
-
-# Sample DataFrame
-data = {
-    'Category': ['Category A', 'Category B', 'Category C'],
-    'Value': [15, 30, 45]
-}
-
-df = pd.DataFrame(data)
-
-# Define a custom color palette with shades of red
-custom_colors = sns.color_palette('Reds', n_colors=len(df))
-
-# Create a pie chart
-fig, ax = plt.subplots()
-wedges, texts, autotexts = ax.pie(
-    df['Value'],
-    labels=None,
-    autopct='',
-    startangle=90,
-    colors=custom_colors,
-    pctdistance=0.85
-)
-ax.axis('equal')  # Equal aspect ratio ensures the pie chart is circular.
-
-# Manually add labels outside the pie chart with orientations
-label_positions = [1.15, 1.2, 1.25]  # Adjust the radial distances as needed
-for i, label in enumerate(df['Category']):
-    angle = (wedges[i].theta2 + wedges[i].theta1) / 2.0
-    x = label_positions[i] * wedges[i].r * 1.1 * plt.cos(angle * np.pi / 180)
-    y = label_positions[i] * wedges[i].r * 1.1 * plt.sin(angle * np.pi / 180)
-    plt.text(x, y, label, ha="center", va="center")
-
-# Add a title to the pie chart
-ax.set_title('My Pie Chart')
-
-# Display the pie chart in Streamlit
-st.pyplot(fig)
-
-
-
-
 
 
 
