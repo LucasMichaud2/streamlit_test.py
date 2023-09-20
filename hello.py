@@ -43,7 +43,8 @@ class GAMNED_UAE:
                    '35-44, 45-54, 55-64, 65+', 
                    '45-54, 55-64', 
                    '45-54, 55-64, 65+',
-                   '55-64, 65+']
+                   '55-64, 65+',
+                   'None']
     col1 = ['instagram', 'facebook', 'linkedin', 'snapchat', 'youtube']
     col2 = [8, 4.7, 0, 20, 0]
     col3 = [31, 21.5, 21.7, 38.8, 15]
@@ -73,6 +74,7 @@ class GAMNED_UAE:
     col27 = [x + y for x, y in zip(col6, col7)]
     col28 = [x + y for x, y in zip(col27, col8)]
     col29 = [x + y for x, y in zip(col7, col8)]
+    col30 = [0, 0, 0, 0, 0]
     
     
     
@@ -107,6 +109,7 @@ class GAMNED_UAE:
     df_age['45-54, 55-64'] = col27
     df_age['45-54, 55-64, 65+'] = col28
     df_age['55-64, 65+'] = col29
+    df_age['None'] = col30
     
     return df_age
 
@@ -233,7 +236,7 @@ st.subheader('Frequently Used')
 st.sidebar.title('Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
-selected_age = st.sidebar.multiselect("Select an age", age_df)
+selected_age = st.sidebar.multiselect("Select an age", age_df, default='None')
 selected_age = ', '.join(selected_age)
 selected_target = st.sidebar.selectbox('Select target', target_df)
 input_budget = st.sidebar.number_input('Budget', value=0)
