@@ -389,8 +389,6 @@ custom_colors3 = sns.color_palette('Reds', n_colors=len(df_conv))
 
 
 
-st.dataframe(df_brand)
-
 pie1, pie2, pie3 = st.columns(3)
 
 with pie1:
