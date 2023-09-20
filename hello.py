@@ -436,6 +436,8 @@ with st.container():
 
 st.text(' ')
 
+st.subheader('Budget Allocation')
+
 
 st.dataframe(df_allowance)
 
