@@ -386,7 +386,6 @@ st.subheader('Top Formats')
 
 st.dataframe(output_rating)
 
-st.dataframe(heat_map2)
 
 st.text(' ')
 
@@ -437,14 +436,6 @@ with st.container():
 
 st.text(' ')
 
-
-st.dataframe(agg_rating3)
-
-st.text(threshold)
-
-st.dataframe(cost_rating)
-
-st.dataframe(df_budget)
 
 st.dataframe(df_allowance)
 
