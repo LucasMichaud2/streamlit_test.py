@@ -466,8 +466,9 @@ with pie1:
   fig1, ax1 = plt.subplots()
   ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90, colors=custom_colors1)
   ax1.axis('equal')
+  ax1.set_title('Branding')
   st.pyplot(fig1)
-  st.subheader('branding')
+  
 
 with pie2:
   
