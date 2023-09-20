@@ -23,7 +23,11 @@ class GAMNED_UAE:
     self.obj_list = ['branding', 'consideration', 'conversion']
 
   def get_age_data(self):
-    column_names = ['channel', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+', '13-17, 18-24', '13-17, 18-24, 25-34']
+    column_names = ['channel', '13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+', '13-17, 18-24', '13-17, 18-24, 25-34',
+                   '13-17, 18-24, 25-34, 35-44',
+                   '13-17, 18-24, 25-34, 35-44, 45-54', 
+                   '13-17, 18-24, 25-34, 35-44, 45-54', 55-65', 
+                   'all']
     col1 = ['instagram', 'facebook', 'linkedin', 'snapchat', 'youtube']
     col2 = [8, 4.7, 0, 20, 0]
     col3 = [31, 21.5, 21.7, 38.8, 15]
@@ -34,6 +38,11 @@ class GAMNED_UAE:
     col8 = [3, 5.6, 0, 0, 9]
     col9 = [x + y for x, y in zip(col2, col3)]
     col10 = [x + y for x, y in zip(col9, col4)]
+    col11 = [x + y for x, y in zip(col10, col5)]
+    col12 = [x + y for x, y in zip(col11, col6)]
+    col13 = [x + y for x, y in zip(col12, col7)]
+    col14 = [x + y for x, y in zip(col13, col8)]
+    
 
     df_age = pd.DataFrame(col1, columns = ['channel'])
     df_age['13-17'] = col2
@@ -45,7 +54,12 @@ class GAMNED_UAE:
     df_age['65+'] = col8
     df_age['13-17, 18-24'] = col9
     df_age['13-17, 18-24, 25-34'] = col10
-
+    df_age['13-17, 18-24, 25-34, 35-44'] = col11
+    df_age['13-17, 18-24, 25-34, 35-44, 45-54'] = col12
+    df_age['13-17, 18-24, 25-34, 35-44, 45-54', 55-65'] = col13
+    df_age['all'] = col14
+      
+    
     return df_age
 
 
@@ -156,7 +170,7 @@ color_dictionary = {
     100: '#4A235A'
 }
 
-age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+', 'all']
 age_df = pd.DataFrame(age_list)
 
 objective_list = ['branding', 'consideration', 'conversion']
