@@ -451,6 +451,10 @@ df_brand = df_brand.dropna()
 st.dataframe(df_brand)
 
 
+fig1, ax1 = plt.subplots()
+ax1.pie(df_brand['branding'], labels=df_brand['channel'], autopct='%1.1f%%', startangle=90)
+ax1.axis('equal')
+st.pyplot(fig1
 
 # Sample DataFrame
 
