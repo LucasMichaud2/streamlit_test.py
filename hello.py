@@ -261,7 +261,7 @@ df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 format_rating = df_rating3.head(10)
 format_rating['format'] = format_rating['channel'] + ' - ' + format_rating['formats']
-format_rating = format_rating.drop(['channel'], aixs=1)
+format_rating = format_rating.drop(['channels'], aixs=1)
 format_rating = format_rating.drop(['formats'], axis=1)
 format_rating = format_rating[['format', selected_objective]]
 
