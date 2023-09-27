@@ -341,17 +341,17 @@ if channel_number == 0:
       'allowance': [disp_allow, 500]
     }
     df_allowance = pd.DataFrame(budget_lib1)
-    elif input_budget < 5001:
-      df_selection = cost_rating.head(1)
-      df_budget = df_selection.copy()
-      average_max = df_budget['average'].max()
-      average_min = df_budget['average'].min()
-      average_diff = average_max - average_min
-      df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
-      df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
-      df_budget['allowance'] = input_budget * df_budget['distribution']
-      columns_to_drop = ['average', 'index', 'norm', 'distribution']
-      df_allowance = df_budget.drop(columns=columns_to_drop)
+  elif input_budget < 5001:
+    df_selection = cost_rating.head(1)
+    df_budget = df_selection.copy()
+    average_max = df_budget['average'].max()
+    average_min = df_budget['average'].min()
+    average_diff = average_max - average_min
+    df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
+    df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
+    df_budget['allowance'] = input_budget * df_budget['distribution']
+    columns_to_drop = ['average', 'index', 'norm', 'distribution']
+    df_allowance = df_budget.drop(columns=columns_to_drop)
   
     
   df_selection = cost_rating[cost_rating['norm'] > threshold]
