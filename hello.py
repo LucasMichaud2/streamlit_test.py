@@ -651,6 +651,49 @@ with st.container():
   unsafe_allow_html=True
 )
 
+st.text(' ')
+
+with st.container():
+  st.markdown(
+  f"""
+  <div style='display: flex;'>
+      <div style='background-color:{color30}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name30}</div>
+      <div style='background-color:{color31}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name31}</div>
+      <div style='background-color:{color32}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name32}</div>
+      <div style='background-color:{color33}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name33}</div>
+      <div style='background-color:{color34}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name34}</div>
+  </div>
+  """,
+  unsafe_allow_html=True
+)
+
+st.text(' ')
+
+with st.container():
+  st.markdown(
+  f"""
+  <div style='display: flex;'>
+      <div style='background-color:{color35}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name35}</div>
+      <div style='background-color:{color36}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name36}</div>
+      <div style='background-color:{color37}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name37}</div>
+      <div style='background-color:{color38}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name38}</div>
+      <div style='background-color:{color39}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name39}</div>
+  </div>
+  """,
+  unsafe_allow_html=True
+)
+
+
 
 st.text(' ')
 
