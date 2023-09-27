@@ -703,8 +703,9 @@ st.subheader('Budget Allocation')
 st.dataframe(df_allowance)
 
 fig4, ax4 = plt.subplots()
-ax4.pie(df_allowance['allowance'], labels=df_allowance['channel'], startangle=90, wedgeprops=dict(width=0.4), colors=custom_colors1, autopct='', pctdistance=0.85,
+ax4.pie(df_allowance['allowance'], labels=df_allowance['channel'], startangle=90, wedgeprops=dict(width=0.4), colors=custom_colors1, autopct='%1.1f%%', pctdistance=0.85,
        textprops=dict(color="black"))
+
 
 center_circle = plt.Circle((0,0), 0.7, fc='white')
 fig4.gca().add_artist(center_circle)
