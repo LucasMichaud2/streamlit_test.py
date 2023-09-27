@@ -377,11 +377,6 @@ if channel_number == 0:
     df_budget['allowance'] = input_budget * df_budget['distribution']
     columns_to_drop = ['average', 'index', 'norm', 'distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
-    display_check = df_allowance[(df_allowance['channel'] == 'display') & (df_allowance['allowance'] > max_display)]
-    if not display_check.empty:
-      df_allowance.at[df_allowance['channel'] == 'display', 'allowance'] = max_display
-
-
 
 else:
   df_selection = cost_rating.head(channel_number)
@@ -650,106 +645,101 @@ with st.container():
   unsafe_allow_html=True
 )
 
-st.text(' ')
 
 
 with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{color15}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color15}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name15}</div>
-      <div style='background-color:{color16}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color16}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name16}</div>
-      <div style='background-color:{color17}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color17}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name17}</div>
-      <div style='background-color:{color18}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color18}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name18}</div>
-      <div style='background-color:{color19}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color19}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name19}</div>
   </div>
   """,
   unsafe_allow_html=True
 )
 
-st.text(' ')
 
 with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{color20}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color20}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name20}</div>
-      <div style='background-color:{color21}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color21}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name21}</div>
-      <div style='background-color:{color22}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color22}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name22}</div>
-      <div style='background-color:{color23}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color23}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name23}</div>
-      <div style='background-color:{color24}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color24}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name24}</div>
   </div>
   """,
   unsafe_allow_html=True
 )
 
-st.text(' ')
 
 with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{color25}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color25}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name25}</div>
-      <div style='background-color:{color26}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color26}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name26}</div>
-      <div style='background-color:{color27}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color27}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name27}</div>
-      <div style='background-color:{color28}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color28}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name28}</div>
-      <div style='background-color:{color29}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color29}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name29}</div>
   </div>
   """,
   unsafe_allow_html=True
 )
 
-st.text(' ')
 
 with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{color30}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color30}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name30}</div>
-      <div style='background-color:{color31}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color31}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name31}</div>
-      <div style='background-color:{color32}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color32}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name32}</div>
-      <div style='background-color:{color33}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color33}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name33}</div>
-      <div style='background-color:{color34}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color34}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name34}</div>
   </div>
   """,
   unsafe_allow_html=True
 )
 
-st.text(' ')
 
 with st.container():
   st.markdown(
   f"""
   <div style='display: flex;'>
-      <div style='background-color:{color35}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color35}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name35}</div>
-      <div style='background-color:{color36}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color36}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name36}</div>
-      <div style='background-color:{color37}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color37}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name37}</div>
-      <div style='background-color:{color38}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color38}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name38}</div>
-      <div style='background-color:{color39}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      <div style='background-color:{color39}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name39}</div>
   </div>
   """,
