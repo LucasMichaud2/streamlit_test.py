@@ -357,8 +357,8 @@ elif input_budget < 70001 and input_budget > 5001:
 
 ##################################### taking out the code and name ########################
 
-name0 = heat_map2.at[0, 'channel']
-color0 = heat_map2.at[0, 'mapped_colors']
+name0 = format_rating.at[0, 'format']
+color0 = format_rating.at[0, 'mapped_colors']
 name1 = heat_map2.at[1, 'channel']
 color1 = heat_map2.at[1, 'mapped_colors']
 name2 = heat_map2.at[2, 'channel']
