@@ -351,7 +351,7 @@ elif input_budget < 100001 and input_budget > 5001:
     df_budget = df_budget.head(2)
     df_budget['allowance'] = input_budget * df_budget['distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
-  elif 
+  
     
 
 
