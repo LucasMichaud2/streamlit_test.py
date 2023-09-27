@@ -308,6 +308,20 @@ heat_map = heat_map.reset_index()
 heat_map2 = heat_map.head(10)
 
 
+##################################### Max Channel Budget ##################################
+
+max_display = 5000
+max_inread_video = 5000
+max_youtube = 4000
+max_facebook = 4000
+max_tiktok = 4000
+max_instagram = 3000
+max_linkedin = 4000
+max_snapchat = 3000
+max_search = 1000
+
+
+
 ##################################### Buidling Budget #####################################
 
 cost_rating = cost_rating.drop([selected_objective], axis=1)
@@ -352,12 +366,7 @@ elif input_budget < 100001 and input_budget > 5001:
     df_budget['allowance'] = input_budget * df_budget['distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
   
-    
-
-
-
   
-
 
 
 
@@ -543,10 +552,6 @@ with st.container():
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name3}</div>
        <div style='background-color:{color4}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name4}</div>
-      <div style='background-color:{color5}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name5}</div>
-      <div style='background-color:{color6}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
-      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name6}</div>
   </div>
   """,
   unsafe_allow_html=True
