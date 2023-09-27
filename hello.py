@@ -243,7 +243,7 @@ selected_age = ', '.join(selected_age)
 selected_target = st.sidebar.selectbox('Select target', target_df)
 st.sidebar.title('Budget Parameters')
 input_budget = st.sidebar.number_input('Budget', value=0)
-formats_number = st.sidebar.number_input('Number of formats', value=0)
+channel_number = st.sidebar.number_input('Number of channels', value=0)
 
 
 
