@@ -357,6 +357,7 @@ else:
   df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
   df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
   df_budget['allowance'] = input_budget * df_budget['distribution']
+  st.dataframe(df_budget)
   columns_to_drop = ['average', 'index', 'norm', 'distribution']
   df_allowance = df_budget.drop(columns=columns_to_drop)
 
