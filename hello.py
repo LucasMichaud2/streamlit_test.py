@@ -360,6 +360,7 @@ else:
   st.dataframe(df_budget)
   columns_to_drop = ['average', 'index', 'norm', 'distribution']
   df_allowance = df_budget.drop(columns=columns_to_drop)
+  st.dataframe(df_allowance)
 
 
 
@@ -737,6 +738,8 @@ st.subheader('Budget Allocation')
 st.dataframe(cost_rating)
 
 st.dataframe(df_allowance)
+
+st.text(' ')
 
 fig4, ax4 = plt.subplots()
 ax4.pie(df_allowance['allowance'], labels=df_allowance['channel'], startangle=90, wedgeprops=dict(width=0.4), colors=custom_colors1, autopct='%1.1f%%', pctdistance=0.85,
