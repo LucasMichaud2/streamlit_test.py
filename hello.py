@@ -235,13 +235,15 @@ target_df = pd.DataFrame(target_list)
 st.title('GAMNED Marketing Tool')
 st.text(' ')
 st.subheader('Frequently Used')
-st.sidebar.title('Parameters')
+st.sidebar.title('Heatmap Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.multiselect("Select an age", age_df)
 selected_age = ', '.join(selected_age)
 selected_target = st.sidebar.selectbox('Select target', target_df)
+st.sidebar.title('Budget Parameters')
 input_budget = st.sidebar.number_input('Budget', value=0)
+formats_number = st.sidebar.number_input('Number of formats', value=0)
 
 
 
