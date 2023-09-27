@@ -344,8 +344,14 @@ df_allowance = df_budget.drop(columns=columns_to_drop)
 
 # df_allowance now contains the DataFrame with the specified columns dropped
 
+##################################### Max Budget by channels ##############################
+
+
+
 
 ##################################### Budget Rules ########################################
+
+
 
 if input_budget < 5001 and selected_objective == 'consideration':
   disp_allow = input_budget - 500
@@ -713,6 +719,7 @@ st.text(' ')
 
 st.subheader('Budget Allocation')
 
+st.dataframe(cost_rating)
 
 st.dataframe(df_allowance)
 
