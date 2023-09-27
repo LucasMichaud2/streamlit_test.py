@@ -319,8 +319,6 @@ max_linkedin = 4000
 max_snapchat = 3000
 max_search = 1000
 
-
-
 ##################################### Buidling Budget #####################################
 
 cost_rating = cost_rating.drop([selected_objective], axis=1)
@@ -330,21 +328,35 @@ cost_rating_std = cost_rating['average'].std()
 cost_rating_mean = cost_rating['average'].mean()
 cost_rating['norm'] = (cost_rating['average'] - cost_rating_mean) / cost_rating_std
 threshold = cost_rating['norm'].max() - 0.50*cost_rating['norm'].max()
-df_selection = cost_rating[cost_rating['norm'] > threshold]
-
-df_budget = df_selection.copy()
-average_max = df_budget['average'].max()
-average_min = df_budget['average'].min()
-average_diff = average_max - average_min
-df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
-df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
-df_budget['allowance'] = input_budget * df_budget['distribution']
-columns_to_drop = ['average', 'index', 'norm', 'distribution']
-df_allowance = df_budget.drop(columns=columns_to_drop)
 
 # df_allowance now contains the DataFrame with the specified columns dropped
 
-##################################### Max Budget by channels ##############################
+##################################### Imposed budget ######################################
+
+if channel_number == 0:
+  df_selection = cost_rating[cost_rating['norm'] > threshold]
+
+  df_budget = df_selection.copy()
+  average_max = df_budget['average'].max()
+  average_min = df_budget['average'].min()
+  average_diff = average_max - average_min
+  df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
+  df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
+  df_budget['allowance'] = input_budget * df_budget['distribution']
+  columns_to_drop = ['average', 'index', 'norm', 'distribution']
+  df_allowance = df_budget.drop(columns=columns_to_drop)
+
+else:
+  df_selection = cost_rating.head(channel_number)
+  df_budget = df_selection.copy()
+  average_max = df_budget['average'].max()
+  average_min = df_budget['average'].min()
+  average_diff = average_max - average_min
+  df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
+  df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
+  df_budget['allowance'] = input_budget * df_budget['distribution']
+  columns_to_drop = ['average', 'index', 'norm', 'distribution']
+  df_allowance = df_budget.drop(columns=columns_to_drop)
 
 
 
