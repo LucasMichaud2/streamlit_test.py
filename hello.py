@@ -377,6 +377,11 @@ if channel_number == 0:
     df_budget['allowance'] = input_budget * df_budget['distribution']
     columns_to_drop = ['average', 'index', 'norm', 'distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
+    display_check = df_allowance[(df_allowance['channel'] == 'display') & (df_allowance['allowance'] > max_display)]
+    if not display_check.empty:
+      df_allowance.at[df_allowance['channel'] == 'display', 'allowance'] = max_display
+
+
 
 else:
   df_selection = cost_rating.head(channel_number)
@@ -393,6 +398,7 @@ else:
   columns_to_drop = ['average', 'index', 'norm', 'distribution']
   df_allowance = df_budget.drop(columns=columns_to_drop)
   st.dataframe(df_allowance)
+  
 
 
 
