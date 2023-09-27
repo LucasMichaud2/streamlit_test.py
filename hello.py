@@ -271,6 +271,7 @@ format_rating['norm'] = (format_rating[selected_objective] - min_format) / (max_
 format_rating['norm'] = format_rating['norm'].apply(round_5)
 format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
 format_rating = format_rating.reset_index()
+format_rating = format_rating.drop(['index'], axis=1)
 
 ################################## Computing Scores ###################################
 
