@@ -602,7 +602,6 @@ with st.container():
   unsafe_allow_html=True
 )
 
-st.text(' ')
 
 with st.container():
   st.markdown(
