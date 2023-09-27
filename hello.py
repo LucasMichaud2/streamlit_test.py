@@ -529,6 +529,8 @@ st.text(' ')
 
 st.subheader('Top Formats')
 
+st.dataframe(full_format_rating)
+
 st.dataframe(format_rating)
 
 
