@@ -568,6 +568,27 @@ with st.container():
 
 st.text(' ')
 
+with st.container():
+  st.markdown(
+  f"""
+  <div style='display: flex;'>
+      <div style='background-color:{color10}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name10}</div>
+      <div style='background-color:{color11}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name11}</div>
+      <div style='background-color:{color12}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name12}</div>
+      <div style='background-color:{color13}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name13}</div>
+      <div style='background-color:{color14}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name14}</div>
+  </div>
+  """,
+  unsafe_allow_html=True
+)
+
+st.text(' ')
+
 st.subheader('Budget Allocation')
 
 
