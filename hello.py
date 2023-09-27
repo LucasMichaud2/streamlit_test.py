@@ -334,8 +334,18 @@ threshold = cost_rating['norm'].max() - 0.50*cost_rating['norm'].max()
 ##################################### Imposed budget ######################################
 
 if channel_number == 0:
+  if input_budget < 5001 and selected_objective == 'consideration':
+    disp_allow = input_budget - 500
+    budget_lib1 = {
+      'channel': ['display', 'search'],
+      'allowance': [disp_allow, 500]
+    }
+    df_allowance = pd.DataFrame(budget_lib1)
+  elif input_budget < 5001:
+    df_allowance = df_allowance.head(1)
+    df_allowance.at[0, 'allowance'] = input_budget
+    
   df_selection = cost_rating[cost_rating['norm'] > threshold]
-
   df_budget = df_selection.copy()
   average_max = df_budget['average'].max()
   average_min = df_budget['average'].min()
