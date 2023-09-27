@@ -381,12 +381,12 @@ elif input_budget < 5001:
   df_allowance = df_allowance.head(1)
   df_allowance.at[0, 'allowance'] = input_budget
   
-elif input_budget < 100001 and input_budget > 5001:
-  if df_allowance.shape[0] > 2:
-    df_budget = df_budget.head(2)
-    df_budget['allowance'] = input_budget * df_budget['distribution']
-    df_allowance = df_budget.drop(columns=columns_to_drop)
-  
+#elif input_budget < 100001 and input_budget > 5001:
+  #if df_allowance.shape[0] > 2:
+    #df_budget = df_budget.head(2)
+    #df_budget['allowance'] = input_budget * df_budget['distribution']
+    #df_allowance = df_budget.drop(columns=columns_to_drop)
+
   
 
 
