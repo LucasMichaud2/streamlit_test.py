@@ -348,6 +348,7 @@ if channel_number == 0:
 
 else:
   df_selection = cost_rating.head(channel_number)
+  st.dataframe(df_selection)
   df_budget = df_selection.copy()
   average_max = df_budget['average'].max()
   average_min = df_budget['average'].min()
