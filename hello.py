@@ -586,7 +586,28 @@ with st.container():
   """,
   unsafe_allow_html=True
 )
-  
+
+st.text(' ')
+
+with st.container():
+  st.markdown(
+  f"""
+  <div style='display: flex;'>
+      <div style='background-color:{color15}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name15}</div>
+      <div style='background-color:{color16}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name16}</div>
+      <div style='background-color:{color17}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name17}</div>
+      <div style='background-color:{color18}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name18}</div>
+      <div style='background-color:{color19}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name19}</div>
+  </div>
+  """,
+  unsafe_allow_html=True
+)
+
 
 st.text(' ')
 
