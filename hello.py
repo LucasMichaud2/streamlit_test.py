@@ -543,6 +543,10 @@ with st.container():
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name3}</div>
        <div style='background-color:{color4}; width: {'140px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
       display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name4}</div>
+      <div style='background-color:{color5}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name5}</div>
+      <div style='background-color:{color6}; width: {'100px'}; height: {'75px'}; margin-riht: {'50px'}; font-size:{'10px'};
+      display: flex; align-items: {'center'}; justify-content: {'center'}; border-radius: {'20px'}; color: white;'>{name6}</div>
   </div>
   """,
   unsafe_allow_html=True
