@@ -388,17 +388,7 @@ else:
 
 
 
-if input_budget < 5001 and selected_objective == 'consideration':
-  disp_allow = input_budget - 500
-  budget_lib1 = {
-    'channel': ['display', 'search'],
-    'allowance': [disp_allow, 500]
-  }
-  df_allowance = pd.DataFrame(budget_lib1)
-  
-elif input_budget < 5001:
-  df_allowance = df_allowance.head(1)
-  df_allowance.at[0, 'allowance'] = input_budget
+
   
 #elif input_budget < 100001 and input_budget > 5001:
   #if df_allowance.shape[0] > 2:
