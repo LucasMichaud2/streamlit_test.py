@@ -341,9 +341,7 @@ if channel_number == 0:
       'allowance': [disp_allow, 500]
     }
     df_allowance = pd.DataFrame(budget_lib1)
-  elif input_budget < 5001:
-    df_allowance = df_allowance.head(1)
-    df_allowance.at[0, 'allowance'] = input_budget
+  
     
   df_selection = cost_rating[cost_rating['norm'] > threshold]
   df_budget = df_selection.copy()
