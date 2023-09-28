@@ -309,15 +309,15 @@ heat_map2 = heat_map.head(10)
 
 ##################################### Max Channel Budget ##################################
 
-max_display = 5000
-max_inread_video = 5000
-max_youtube = 4000
-max_facebook = 4000
-max_tiktok = 4000
-max_instagram = 3000
-max_linkedin = 4000
-max_snapchat = 3000
-max_search = 1000
+min_display = 5000
+min_inread_video = 5000
+min_youtube = 4000
+min_facebook = 4000
+min_tiktok = 4000
+min_instagram = 3000
+min_linkedin = 4000
+min_snapchat = 3000
+min_search = 1000
 
 ##################################### Buidling Budget #####################################
 
