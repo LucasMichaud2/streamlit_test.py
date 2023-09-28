@@ -793,7 +793,8 @@ st.text(' ')
 heatmap_size = 6
 heatmap_data = heatmap_data.reset_index()
 st.dataframe(heatmap_data)
-plt.figure(figsize=(8, 8))
+st.title('Second Heatmap')
+st.pyplot(plt.figure(figsize=(8, 8)))
 
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
 
@@ -802,8 +803,8 @@ sns.heatmap(data_matrix, cmap=cmap, annot=False, fmt='', xticklabels=True, ytick
 
 #for i in range(heatmap_size):
   #for j in range(heatmap_size):
-plt.title('Heatmap with Label')
-plt.show()
+
+
     
 
 
