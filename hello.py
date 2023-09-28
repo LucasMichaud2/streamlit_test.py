@@ -790,13 +790,15 @@ st.text(' ')
 
 heatmap_size = 6
 
-#plt.figure(figsize=(8, 8))
+plt.figure(figsize=(8, 8))
 
-#cmap = sns.color_palette("plasma", as_cmap=True)
-#sns.heatmap(heatmap_data, cmap=cmap, annot=False, fmt='', xticklabels=True, yticklabels=True, cbar=True)
+cmap = sns.color_palette("plasma", as_cmap=True)
+sns.heatmap(heatmap_data, cmap=cmap, annot=False, fmt='', xticklabels=True, yticklabels=True, cbar=True)
 
 #for i in range(heatmap_size):
   #for j in range(heatmap_size):
+plt.title('Heatmap with Label')
+plt.show()
     
 
 
