@@ -786,6 +786,8 @@ else:
 
 st.text(' ')
 
+st.dataframe(heatmap_data)
+
 #################################### Heatmap Test #################################
 
 heatmap_size = 6
