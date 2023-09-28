@@ -575,8 +575,6 @@ st.subheader('Top Formats')
 
 st.dataframe(full_format_rating)
 
-st.dataframe(format_rating)
-
 
 st.text(' ')
 
@@ -752,7 +750,6 @@ st.text(' ')
 
 st.subheader('Budget Allocation')
 
-st.dataframe(cost_rating)
 
 st.dataframe(df_allowance)
 
