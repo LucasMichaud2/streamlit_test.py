@@ -794,6 +794,8 @@ heatmap_size = 6
 
 plt.figure(figsize=(8, 8))
 
+data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
+
 cmap = sns.color_palette("plasma", as_cmap=True)
 sns.heatmap(heatmap_data['norm'], cmap=cmap, annot=False, fmt='', xticklabels=True, yticklabels=True, cbar=True)
 
