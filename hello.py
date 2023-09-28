@@ -793,12 +793,11 @@ st.text(' ')
 heatmap_size = 6
 heatmap_data = heatmap_data.reset_index()
 st.dataframe(heatmap_data)
-st.title('Second Heatmap')
-st.pyplot(plt.figure(figsize=(8, 8)))
-
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
-
+st.title('Second Heatmap')
+plt.figure(figsize=(8, 8))
 sns.heatmap(data_matrix, cmap='plasma', annot=False, fmt='', xticklabels=True, yticklabels=True, cbar=True)
+st.image(plt, use_container_width=True)
 
 #for i in range(heatmap_size):
   #for j in range(heatmap_size):
