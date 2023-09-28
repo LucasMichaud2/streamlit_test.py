@@ -274,6 +274,12 @@ format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
 format_rating = format_rating.reset_index()
 format_rating = format_rating.drop(['index'], axis=1)
 
+################################# Second heatmap #######################################
+
+second_heatmap = format_rating.head(36)
+heatmap_data = second_heatmap['norm']
+heatmap_labels = second_heatmap['format']
+
 ################################## Computing Scores ###################################
 
 channel_count = pd.DataFrame(df_rating3.groupby('channel')['formats'].count())
@@ -575,6 +581,8 @@ st.subheader('Top Formats')
 
 st.dataframe(full_format_rating)
 
+st.data(format_rating)
+
 
 st.text(' ')
 
@@ -775,6 +783,22 @@ else:
   ax4.axis('equal')
   
   st.pyplot(fig4)
+
+st.text(' ')
+
+#################################### Heatmap Test #################################
+
+heatmap_size = 6
+
+#plt.figure(figsize=(8, 8))
+
+#cmap = sns.color_palette("plasma", as_cmap=True)
+#sns.heatmap(heatmap_data, cmap=cmap, annot=False, fmt='', xticklabels=True, yticklabels=True, cbar=True)
+
+#for i in range(heatmap_size):
+  #for j in range(heatmap_size):
+    
+
 
 
 
