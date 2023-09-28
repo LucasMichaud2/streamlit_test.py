@@ -791,7 +791,7 @@ st.dataframe(heatmap_data)
 #################################### Heatmap Test #################################
 
 heatmap_size = 6
-
+heatmap_data = heatmap_data.reset_index()
 plt.figure(figsize=(8, 8))
 
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
