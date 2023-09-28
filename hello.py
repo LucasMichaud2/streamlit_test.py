@@ -796,7 +796,7 @@ st.dataframe(heatmap_data)
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
 st.title('Second Heatmap')
 plt.figure(figsize=(16, 16))
-sns.heatmap(data_matrix, cmap="plasma", annot=False, xticklabels=False, yticklabels=False, cbar=False)
+sns.heatmap(data_matrix, cmap="magma", annot=False, xticklabels=False, yticklabels=False, cbar=False)
 st.pyplot(plt)
 
 #for i in range(heatmap_size):
