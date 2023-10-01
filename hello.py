@@ -575,20 +575,6 @@ st.text(' ')
 
 st.dataframe(df_budget)
 
-channel_size = len(df_budget)
-column_budget_drop = ['index', 'norm', 'distribution']
-df_bubble_chart = df_budget.drop(columns=column_budget_drop)
-df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
-if input_budget != 0:
-  df_bubble_chart['allowance'] = df_bubble_chart['allowance'] / input_budget * 1000
-  plt.figure(figsize=(8, 6))
-  sns.scatterplot(data=df_bubble_chart, x='average', y='average', size='allowance', sizes=(10, 1000), alpha=0.5)
-  st.pyplot(plt)
-
-             
-  st.dataframe(df_bubble_chart)
-else:
-  st.text('Waiting for budget')
 
 
 ################################ Cost Test ############################################
@@ -625,6 +611,20 @@ df_budget2['dist'] = df_budget2['dist'].apply(lambda x: round(x, 2))
 df_budget2['allowance'] = input_budget * df_budget2['dist']
 
 st.dataframe(df_budget2)
+
+column_budget_drop = ['index', 'norm', 'dist']
+df_bubble_chart = df_budget2.drop(columns=column_budget_drop)
+df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
+if input_budget != 0:
+  df_bubble_chart['allowance'] = df_bubble_chart['allowance'] / input_budget * 1000
+  plt.figure(figsize=(8, 6))
+  sns.scatterplot(data=df_bubble_chart, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5)
+  st.pyplot(plt)
+
+             
+  st.dataframe(df_bubble_chart)
+else:
+  st.text('Waiting for budget')
 
 
 
