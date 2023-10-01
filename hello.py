@@ -603,6 +603,20 @@ with col2:
   
   price_linkedin = st.number_input('Linkedin $', value=1)
 
+with col3:
+
+  price_nativead = st.number_input('Native Ads $', value=1)
+
+with col4:
+
+  price_display = st.number_input('Display $', value=1)
+
+with col5:
+
+  price_connectedtv = st.number_input('Connected TV $', value=1)
+
+
+
 
     
 
