@@ -796,7 +796,7 @@ st.dataframe(heatmap_data)
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
 st.title('Second Heatmap')
 plt.figure(figsize=(25, 25))
-sns.heatmap(data_matrix, cmap="plasma", annot=False, xticklabels=False, yticklabels=False, cbar=False)
+sns.heatmap(data_matrix, cmap="flare", annot=False, xticklabels=False, yticklabels=False, cbar=False)
 for i in range(heatmap_size):
   for j in range(heatmap_size):
     label = format_rating.at[i+j, 'channel'] + '\n' + '\n' + format_rating.at[i+j, 'formats']
