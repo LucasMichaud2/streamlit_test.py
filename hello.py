@@ -625,8 +625,8 @@ if input_budget != 0:
     label = row['channel']  # Get the label from the 'label' column
     ax.annotate(label, (row['average'], row['price']), fontsize=12, ha='center')
 
-  plt.xlim(df_bubble_chart['average'].min() - 1, df_bubble_chart['average'].max() + 1)
-  plt.ylim(df_bubble_chart['price'].min() - 1, df_bubble_chart['price'].max() + 1)
+  plt.xlim(df_bubble_chart['average'].min() - 0.5, df_bubble_chart['average'].max() + 0.5)
+  plt.ylim(df_bubble_chart['price'].min() - 0.5, df_bubble_chart['price'].max() + 0.5)
   st.pyplot(plt)
 
              
