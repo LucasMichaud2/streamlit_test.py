@@ -272,6 +272,8 @@ format_rating['norm'] = format_rating['norm'].apply(round_5)
 format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
 format_rating = format_rating.reset_index()
 format_rating = format_rating.drop(['index'], axis=1)
+column_format_drop = ['format', 'norm', 'mapped_colors']
+displayed_format = format_rating.drop(column=column_format_drop)
 
 ################################# Second heatmap #######################################
 
@@ -513,7 +515,7 @@ df_freq['conversion'] = df_freq['conversion'].round(1)
 st.text(' ')
 
 
-st.dataframe(format_rating)
+st.dataframe(displayed_format)
 
 
 st.text(' ')
