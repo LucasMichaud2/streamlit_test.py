@@ -591,6 +591,12 @@ else:
   st.text('Waiting for budget')
 
 
+################################ Cost Test ############################################
+
+price_youtube = st.number_input('Youtube $', value=1)
+price_linkedin = st.number_input('Linkedin $', value=1)
+
+
     
 
 
