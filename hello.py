@@ -593,8 +593,15 @@ else:
 
 ################################ Cost Test ############################################
 
-price_youtube = st.number_input('Youtube $', value=1)
-price_linkedin = st.number_input('Linkedin $', value=1)
+col1, col2, col3, col4, col5 = st.columns(5)
+
+with col1:
+  
+  price_youtube = st.number_input('Youtube $', value=1)
+
+with col2:
+  
+  price_linkedin = st.number_input('Linkedin $', value=1)
 
 
     
