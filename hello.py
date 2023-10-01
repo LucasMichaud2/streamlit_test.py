@@ -580,9 +580,9 @@ column_budget_drop = ['index', 'norm', 'distribution']
 df_bubble_chart = df_budget.drop(columns=column_budget_drop)
 df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
 if input_budget != 0:
-  df_bubble_chart['allowance'] = df_bubble_chart['allowance'] / input_budget
+  df_bubble_chart['allowance'] = df_bubble_chart['allowance'] / input_budget * 200
   plt.figure(figsize=(8, 6))
-  sns.scatterplot(data=df_bubble_chart, x='average', y='average', size='allowance', sizes=(0, 1), alpha=0.5)
+  sns.scatterplot(data=df_bubble_chart, x='average', y='average', size='allowance', sizes=(10, 200), alpha=0.5)
   st.pyplot(plt)
 
              
