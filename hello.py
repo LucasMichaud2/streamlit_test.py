@@ -622,16 +622,16 @@ df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
 df_bubble_chart['price'] = 1 / df_bubble_chart['price']
 if input_budget != 0:
   df_bubble_chart['allowance'] = df_bubble_chart['allowance']
-  plt.figure(figsize=(8, 6), facecolor='black')
+  plt.figure(figsize=(8, 6))
   ax = sns.scatterplot(data=df_bubble_chart, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=df_bubble_chart['channel'])
+  ax.set_facecolor('black')
   for index, row in df_bubble_chart.iterrows():
     label = row['channel']  # Get the label from the 'label' column
     ax.annotate(label, (row['average'], row['price']), fontsize=12, ha='center', color='white')
 
   plt.xlim(df_bubble_chart['average'].min() - 0.5, df_bubble_chart['average'].max() + 0.5)
   plt.ylim(df_bubble_chart['price'].min() - 0.5, df_bubble_chart['price'].max() + 0.5)
-  ax.set_xlabel('Average', color='white')
-  ax.set_ylabel('Price', color='white')
+  plt.gcf().set_facecolor('none')
   st.pyplot(plt)
 
              
