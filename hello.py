@@ -616,6 +616,7 @@ sns.set_palette("magma")
 column_budget_drop = ['index', 'norm', 'dist']
 df_bubble_chart = df_budget2.drop(columns=column_budget_drop)
 df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
+df_bubble_chart['price'] = 1 / df_bubble_chart['price']
 if input_budget != 0:
   df_bubble_chart['allowance'] = df_bubble_chart['allowance']
   plt.figure(figsize=(8, 6))
