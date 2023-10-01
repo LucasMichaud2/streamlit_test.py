@@ -796,10 +796,10 @@ st.dataframe(heatmap_data)
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
 st.title('Second Heatmap')
 plt.figure(figsize=(25, 25))
-sns.heatmap(data_matrix, cmap="magma", annot=False, xticklabels=False, yticklabels=False, cbar=False)
+sns.heatmap(data_matrix, cmap="plasma", annot=False, xticklabels=False, yticklabels=False, cbar=False)
 for i in range(heatmap_size):
   for j in range(heatmap_size):
-    label = format_rating.at[i+j, 'channel'] + '\n' + format_rating.at[i+j, 'formats']
+    label = format_rating.at[i+j, 'channel'] + '\n' + '\n' + format_rating.at[i+j, 'formats']
     font_prop = fm.FontProperties(weight='bold', size=17)
     plt.text(j + 0.5, i + 0.5, label, ha='center', color='white', fontsize=17, fontproperties=font_prop)
     
