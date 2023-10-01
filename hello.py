@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
 
 objective_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Objectives_updated-Table%201.csv'
@@ -799,7 +800,8 @@ sns.heatmap(data_matrix, cmap="magma", annot=False, xticklabels=False, yticklabe
 for i in range(heatmap_size):
   for j in range(heatmap_size):
     label = format_rating.at[i+j, 'channel'] + '\n' + format_rating.at[i+j, 'formats']
-    plt.text(j + 0.5, i + 0.5, label, ha='center', color='white', fontsize=17)
+    font_prop = fm.FontProperties(weight='bold', size=17)
+    plt.text(j + 0.5, i + 0.5, label, ha='center', color='white', fontsize=17, fontproperties=font_prop)
     
 st.pyplot(plt)
 
