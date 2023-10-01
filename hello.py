@@ -264,8 +264,7 @@ df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 full_format_rating = df_rating3.copy()
 format_rating = df_rating3.copy()
 format_rating['format'] = format_rating['channel'] + ' - ' + format_rating['formats']
-format_rating = format_rating.drop(['formats'], axis=1)
-format_rating = format_rating[['channel', 'format', selected_objective]]
+format_rating = format_rating[['channel', 'formts', 'format', selected_objective]]
 min_format = full_format_rating[selected_objective].min()
 max_format = full_format_rating[selected_objective].max()
 format_rating['norm'] = (format_rating[selected_objective] - min_format) / (max_format - min_format)*100
