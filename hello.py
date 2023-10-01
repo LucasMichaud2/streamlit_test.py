@@ -615,6 +615,11 @@ with col5:
 
   price_connectedtv = st.number_input('Connected TV $', value=1)
 
+######################################## quick Test ##########################################
+
+df_budget2 = df_selection.copy()
+df_budget2['price'] = [price_youtube, price_nativead, price_linkedin, price_display, price_connectedtv]
+st.dataframe(df_budget2)
 
 
 
