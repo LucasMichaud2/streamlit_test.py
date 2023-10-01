@@ -575,6 +575,12 @@ st.text(' ')
 
 st.dataframe(df_budget)
 
+channel_size = len(df_budget)
+column_budget_drop = ['index', 'norm', 'distribution']
+df_bubble_chart = df_budget.drop(columns=column_budget_drop)
+df_bubble_chart['average'] = df_bubble_chart['averge'] * 5 / 25
+st.dataframe(df_bubble_chart)
+
 
     
 
