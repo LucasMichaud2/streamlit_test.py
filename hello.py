@@ -597,23 +597,23 @@ col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
   
-  price_youtube = st.number_input('Youtube $', step=0.1, value=1)
+  price_youtube = st.number_input('Youtube $', step=0.1, value=1.0)
 
 with col2:
   
-  price_linkedin = st.number_input('Linkedin $', step=0.1, value=1)
+  price_linkedin = st.number_input('Linkedin $', step=0.1, value=1.0)
 
 with col3:
 
-  price_nativead = st.number_input('Native Ads $', step=0.1, value=1)
+  price_nativead = st.number_input('Native Ads $', step=0.1, value=1.0)
 
 with col4:
 
-  price_display = st.number_input('Display $', step=0.1,  value=1)
+  price_display = st.number_input('Display $', step=0.1,  value=1.0)
 
 with col5:
 
-  price_connectedtv = st.number_input('Connected TV $', step=0.1,  value=1)
+  price_connectedtv = st.number_input('Connected TV $', step=0.1,  value=1.0)
 
 ######################################## quick Test ##########################################
 
