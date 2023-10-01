@@ -798,7 +798,7 @@ plt.figure(figsize=(20, 20))
 sns.heatmap(data_matrix, cmap="magma", annot=False, xticklabels=False, yticklabels=False, cbar=False)
 for i in range(heatmap_size):
   for j in range(heatmap_size):
-    label = format_rating.at[i+j, 'format']
+    label = format_rating.at[i+j, 'channel'] + '\n' + format_rating.at[i+j, 'formats']
     plt.text(j + 0.5, i + 0.5, label, ha='center', color='white', fontsize=12)
     
 st.pyplot(plt)
