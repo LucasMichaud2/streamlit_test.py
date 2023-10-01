@@ -273,7 +273,7 @@ format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
 format_rating = format_rating.reset_index()
 format_rating = format_rating.drop(['index'], axis=1)
 column_format_drop = ['format', 'norm', 'mapped_colors']
-displayed_format = format_rating.drop(column=column_format_drop)
+displayed_format = format_rating.drop(columns=column_format_drop)
 
 ################################# Second heatmap #######################################
 
