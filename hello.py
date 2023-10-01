@@ -619,11 +619,14 @@ with col5:
 
 df_budget2 = df_selection.copy()
 df_budget2['price'] = [price_youtube, price_nativead, price_linkedin, price_display, price_connectedtv]
+df_budget2['price_ratio'] = df_budget2['average'] / df_budget2['price']
+df_budget2['dist'] = df_budget2['price_ratio'] / df_budget2['price_ratio'].sum()
+df_budget2['dist'] = df_budget2['dist'].apply(lambda x: round(x, 2))
+df_budget2['allowance'] = input_budget * df_budget2['dist']
+
 st.dataframe(df_budget2)
 
 
-
-    
 
 
 
