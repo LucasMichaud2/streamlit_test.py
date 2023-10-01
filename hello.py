@@ -235,7 +235,6 @@ target_df = pd.DataFrame(target_list)
 
 st.title('GAMNED Marketing Tool')
 st.text(' ')
-st.subheader('Frequently Used')
 st.sidebar.title('Heatmap Parameters')
 
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
@@ -523,9 +522,7 @@ st.subheader("Heatmap")
 
 heatmap_size = 6
 heatmap_data = heatmap_data.reset_index()
-st.dataframe(heatmap_data)
 data_matrix = heatmap_data["norm"].values.reshape(heatmap_size, heatmap_size)
-st.title('Second Heatmap')
 plt.figure(figsize=(25, 25))
 sns.heatmap(data_matrix, cmap="flare", annot=False, xticklabels=False, yticklabels=False, cbar=False)
 for i in range(heatmap_size):
