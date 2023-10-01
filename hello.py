@@ -507,6 +507,9 @@ df_freq['branding'] = df_freq['branding'].round(1)
 df_freq['consideration'] = df_freq['consideration'].round(1)
 df_freq['conversion'] = df_freq['conversion'].round(1)
 
+custom_colors1 = sns.color_palette('Blues', n_colors=len(df_brand))
+custom_colors2 = sns.color_palette('Purples', n_colors=len(df_cons))
+custom_colors3 = sns.color_palette('Reds', n_colors=len(df_conv))
 
 st.text(' ')
 
