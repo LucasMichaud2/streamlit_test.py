@@ -387,19 +387,15 @@ if channel_number == 0:
 
 else:
   df_selection = cost_rating.head(channel_number)
-  st.dataframe(df_selection)
   df_budget = df_selection.copy()
-  st.dataframe(df_budget)
   average_max = df_budget['average'].max()
   average_min = df_budget['average'].min()
   average_diff = average_max - average_min
   df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
   df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
   df_budget['allowance'] = input_budget * df_budget['distribution']
-  st.dataframe(df_budget)
   columns_to_drop = ['average', 'index', 'norm', 'distribution']
   df_allowance = df_budget.drop(columns=columns_to_drop)
-  st.dataframe(df_allowance)
   
 
 
@@ -571,10 +567,11 @@ st.text(' ')
 
 
 
-#################################### Heatmap Test #################################
+#################################### Bubble graph test #################################
 
 
 
+st.dataframe(df_budget)
 
 
     
