@@ -611,6 +611,7 @@ df_budget2['dist'] = df_budget2['dist'].apply(lambda x: round(x, 2))
 df_budget2['allowance'] = input_budget * df_budget2['dist']
 
 st.dataframe(df_budget2)
+sns.set_palette("magma")
 
 column_budget_drop = ['index', 'norm', 'dist']
 df_bubble_chart = df_budget2.drop(columns=column_budget_drop)
@@ -618,7 +619,7 @@ df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
 if input_budget != 0:
   df_bubble_chart['allowance'] = df_bubble_chart['allowance']
   plt.figure(figsize=(8, 6))
-  ax = sns.scatterplot(data=df_bubble_chart, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue='color')
+  ax = sns.scatterplot(data=df_bubble_chart, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=df_bubble_chart['channel'])
   for index, row in df_bubble_chart.iterrows():
     label = row['channel']  # Get the label from the 'label' column
     ax.annotate(label, (row['average'], row['price']), fontsize=12, ha='center')
