@@ -847,7 +847,7 @@ st.dataframe(df_allowance2)
 ######################################## bubble chart ##########################################
 
 
-sns.set_palette("spectral")
+sns.set_palette("Spectral")
 
 column_budget_drop = ['index', 'ratio', 'distribution']
 df_bubble = df_bubble.drop(columns=column_budget_drop)
