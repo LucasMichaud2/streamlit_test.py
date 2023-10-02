@@ -671,6 +671,19 @@ with pcol5:
 
   price_waze = st.number_input('Waze $', step=0.1, value=1.0)
 
+
+###################################### Creating Dictinary ###################################
+
+price_dict = {
+  'youtube': price_youtube, 'display': price_display, 'instragram': price_instagram, 'facebook': price_facebook,
+  'linkedin': price_linkedin, 'search': price_search, 'native ads': price_nativead, 'amazon': price_amazon,
+  'tiktok': price_tiktok, 'twitter': price_twitter, 'connected tv': price_connectedtv, 'snapchat': price_snapchat,
+  'in game advertising': price_gamead, 'twitch': price_twitch, 'dooh': price_dooh, 'audio': price_audio,
+  'waze': price_waze
+}
+
+
+
   
   
 
@@ -712,7 +725,7 @@ else:
 
 
 
-
+st.dataframe(output_rating)
 
 
 
