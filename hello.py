@@ -28,7 +28,7 @@ with header_col2:
   st.text(' ')
   st.text(' ')
   st.text(' ')
-  st.title('GAMNED Marketing Tool')
+  st.title('Marketing Tool')
 
 with header_col3:
   st.text(' ')
