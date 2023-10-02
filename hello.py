@@ -529,7 +529,18 @@ st.text(' ')
 
 st.dataframe(displayed_format)
 
-st.write(displayed_format.to_html(classes='styled-dataframe', escape=False), unsafe_allow_html=True)
+styled_df_html = displayed_format.to_html(classes='styled-dataframe', escape=False)
+
+# Create a scrollable table using HTML and CSS
+scrollable_table = f"""
+    <div style="height: 300px; overflow: auto;">
+        {styled_df_html}
+    </div>
+"""
+
+# Display the scrollable table
+st.title("Scrollable DataFrame Example")
+st.markdown(scrollable_table, unsafe_allow_html=True)
 
 
 st.text(' ')
