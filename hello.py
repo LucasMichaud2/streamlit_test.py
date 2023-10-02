@@ -378,7 +378,7 @@ if channel_number == 0:
     columns_to_drop = ['average', 'index', 'norm', 'distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
     
-  elif input_budget < 10001 and input_budget < 5001:
+  elif input_budget < 10001 and input_budget > 5000:
     df_selection = cost_rating.head(2)
     df_budget = df_selection.copy()
     average_max = df_budget['average'].max()
@@ -390,8 +390,9 @@ if channel_number == 0:
     columns_to_drop = ['average', 'index', 'norm', 'distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
 
-  else:
-    df_selection = cost_rating[cost_rating['norm'] > threshold]
+  elif input_budget < 15001 and input_budget > 10000:
+    #df_selection = cost_rating[cost_rating['norm'] > threshold]
+    df_selection = cost_rating.head(3)
     df_budget = df_selection.copy()
     average_max = df_budget['average'].max()
     average_min = df_budget['average'].min()
@@ -402,6 +403,45 @@ if channel_number == 0:
     columns_to_drop = ['average', 'index', 'norm', 'distribution']
     df_allowance = df_budget.drop(columns=columns_to_drop)
 
+
+  elif input_budget < 20001 and input_budget > 15000:
+    #df_selection = cost_rating[cost_rating['norm'] > threshold]
+    df_selection = cost_rating.head(4)
+    df_budget = df_selection.copy()
+    average_max = df_budget['average'].max()
+    average_min = df_budget['average'].min()
+    average_diff = average_max - average_min
+    df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
+    df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
+    df_budget['allowance'] = input_budget * df_budget['distribution']
+    columns_to_drop = ['average', 'index', 'norm', 'distribution']
+    df_allowance = df_budget.drop(columns=columns_to_drop)
+
+  elif input_budget < 25001 and input_budget > 20000:
+    #df_selection = cost_rating[cost_rating['norm'] > threshold]
+    df_selection = cost_rating.head(5)
+    df_budget = df_selection.copy()
+    average_max = df_budget['average'].max()
+    average_min = df_budget['average'].min()
+    average_diff = average_max - average_min
+    df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
+    df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
+    df_budget['allowance'] = input_budget * df_budget['distribution']
+    columns_to_drop = ['average', 'index', 'norm', 'distribution']
+    df_allowance = df_budget.drop(columns=columns_to_drop)
+
+  else:
+    df_selection = cost_rating.head(6)
+    df_budget = df_selection.copy()
+    average_max = df_budget['average'].max()
+    average_min = df_budget['average'].min()
+    average_diff = average_max - average_min
+    df_budget['distribution'] = df_budget['average'] / df_budget['average'].sum()
+    df_budget['distribution'] = df_budget['distribution'].apply(lambda x: round(x, 2))
+    df_budget['allowance'] = input_budget * df_budget['distribution']
+    columns_to_drop = ['average', 'index', 'norm', 'distribution']
+    df_allowance = df_budget.drop(columns=columns_to_drop)
+    
 else:
   df_selection = cost_rating.head(channel_number)
   df_budget = df_selection.copy()
@@ -609,7 +649,6 @@ st.text(' ')
 
 
 
-st.dataframe(df_budget)
 
 
 
@@ -694,41 +733,139 @@ def square_value(x):
 df_price_rating['Squared Average'] = df_price_rating['average'].apply(square_value)
 df_price_rating['ratio'] = df_price_rating['Squared Average'] / df_price_rating['price']
 
+######################################## Making the allowance ################################
+
+if channel_number == 0:
+  if input_budget < 5001 and selected_objective == 'consideration':
+    disp_allow2 = input_budget - 500
+    budget_lib2 = {
+      'channel': ['display', 'search'],
+      'allowance': [disp_allow2, 500]
+    }
+    df_allowance2 = pd.DataFrame(budget_lib2)
+    
+  elif input_budget < 5001:
+    df_selection2 = df_price_rating.head(1)
+    df_budget2 = df_selection2.copy()
+    ratio_max = df_budget2['ratio'].max()
+    ratio_min = df_budget2['ratio'].min()
+    ratio_diff = ratio_max - ratio_min
+    df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+    df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+    df_budget2['allowance'] = input_budget * df_budget2['distribution']
+    df_bubble = df_budget2.copy()
+    columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+    df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
+
+  elif input_budget < 10001 and input_budget > 5000:
+    df_selection2 = df_price_rating.head(2)
+    df_budget2 = df_selection2.copy()
+    ratio_max = df_budget2['ratio'].max()
+    ratio_min = df_budget2['ratio'].min()
+    ratio_diff = ratio_max - ratio_min
+    df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+    df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+    df_budget2['allowance'] = input_budget * df_budget2['distribution']
+    df_bubble = df_budget2.copy()
+    columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+    df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
+
+  elif input_budget < 15001 and input_budget > 10000:
+    df_selection2 = df_price_rating.head(3)
+    df_budget2 = df_selection2.copy()
+    ratio_max = df_budget2['ratio'].max()
+    ratio_min = df_budget2['ratio'].min()
+    ratio_diff = ratio_max - ratio_min
+    df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+    df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+    df_budget2['allowance'] = input_budget * df_budget2['distribution']
+    df_bubble = df_budget2.copy()
+    columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+    df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
+
+  elif input_budget < 20001 and input_budget > 15000:
+    df_selection2 = df_price_rating.head(4)
+    df_budget2 = df_selection2.copy()
+    ratio_max = df_budget2['ratio'].max()
+    ratio_min = df_budget2['ratio'].min()
+    ratio_diff = ratio_max - ratio_min
+    df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+    df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+    df_budget2['allowance'] = input_budget * df_budget2['distribution']
+    df_bubble = df_budget2.copy()
+    columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+    df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
+
+  elif input_budget < 25001 and input_budget > 15000:
+    df_selection2 = df_price_rating.head(5)
+    df_budget2 = df_selection2.copy()
+    ratio_max = df_budget2['ratio'].max()
+    ratio_min = df_budget2['ratio'].min()
+    ratio_diff = ratio_max - ratio_min
+    df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+    df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+    df_budget2['allowance'] = input_budget * df_budget2['distribution']
+    df_bubble = df_budget2.copy()
+    columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+    df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
+
+  else:
+    df_selection2 = df_price_rating.head(6)
+    df_budget2 = df_selection2.copy()
+    ratio_max = df_budget2['ratio'].max()
+    ratio_min = df_budget2['ratio'].min()
+    ratio_diff = ratio_max - ratio_min
+    df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+    df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+    df_budget2['allowance'] = input_budget * df_budget2['distribution']
+    df_bubble = df_budget2.copy()
+    columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+    df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
   
+    
+else:
+  df_selection2 = df_price_rating.head(channel_number)
+  df_budget2 = df_selection2.copy()
+  ratio_max = df_budget2['ratio'].max()
+  ratio_min = df_budget2['ratio'].min()
+  ratio_diff = ratio_max - ratio_min
+  df_budget2['distribution'] = df_budget2['ratio'] / df_budget2['ratio'].sum()
+  df_budget2['distribution'] = df_budget2['distribution'].apply(lambda x: round(x, 2))
+  df_budget2['allowance'] = input_budget * df_budget2['distribution']
+  df_bubble = df_budget2.copy()
+  columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
+  df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
+
   
+st.dataframe(df_allowance2)
 
-######################################## quick Test ##########################################
+######################################## bubble chart ##########################################
 
-df_budget2 = df_selection.copy()
-df_budget2['price'] = [price_youtube, price_nativead, price_linkedin, price_display, price_connectedtv]
-df_budget2['price_ratio'] = df_budget2['average'] / df_budget2['price']
-df_budget2['dist'] = df_budget2['price_ratio'] / df_budget2['price_ratio'].sum()
-df_budget2['dist'] = df_budget2['dist'].apply(lambda x: round(x, 2))
-df_budget2['allowance'] = input_budget * df_budget2['dist']
 
-st.dataframe(df_budget2)
 sns.set_palette("magma")
 
-column_budget_drop = ['index', 'norm', 'dist']
-df_bubble_chart = df_budget2.drop(columns=column_budget_drop)
-df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
-df_bubble_chart['price'] = 1 / df_bubble_chart['price']
+column_budget_drop = ['index', 'ratio', 'distribution']
+df_bubble = df_bubble.drop(columns=column_budget_drop)
+#df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
+df_bubble['price'] = 1 / df_bubble['price']
+st.dataframe(df_bubble)
+
 if input_budget != 0:
-  df_bubble_chart['allowance'] = df_bubble_chart['allowance']
+  df_bubble['allowance'] = df_bubble['allowance']
   plt.figure(figsize=(8, 6))
-  ax = sns.scatterplot(data=df_bubble_chart, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=df_bubble_chart['channel'])
-  ax.set_facecolor('black')
+  ax = sns.scatterplot(data=df_bubble, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=df_bubble['channel'])
+  
   for index, row in df_bubble_chart.iterrows():
     label = row['channel']  # Get the label from the 'label' column
-    ax.annotate(label, (row['average'], row['price']), fontsize=12, ha='center', color='white')
+    ax.annotate(label, (row['average'], row['price']), fontsize=12, ha='center')
 
-  plt.xlim(df_bubble_chart['average'].min() - 0.5, df_bubble_chart['average'].max() + 0.5)
-  plt.ylim(df_bubble_chart['price'].min() - 0.5, df_bubble_chart['price'].max() + 0.5)
+  plt.xlim(df_bubble['average'].min() - 0.5, df_bubble['average'].max() + 0.5)
+  plt.ylim(df_bubble['price'].min() - 0.5, df_bubble['price'].max() + 0.5)
   plt.gcf().set_facecolor('none')
   st.pyplot(plt)
 
              
-  st.dataframe(df_bubble_chart)
+  st.dataframe(df_bubble)
 else:
   st.text('Waiting for budget')
 
@@ -736,6 +873,7 @@ else:
 
 
 st.dataframe(df_price_rating)
+
 
 
 
