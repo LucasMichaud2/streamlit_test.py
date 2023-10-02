@@ -18,7 +18,7 @@ age_date = pd.read_csv(age_url)
 gamned_logo_url = 'https://raw.github.com/LucasMichaud2/streamlit_test.py/main/Logo_G_Gamned_red_baseline.jpg'
 
 
-header_col1, header_col2 = st.columns(2)
+header_col1, header_col2, header_col3 = st.columns(3)
 
 with header_col1:
   st.image(gamned_logo_url)
@@ -29,6 +29,9 @@ with header_col2:
   st.text(' ')
   st.text(' ')
   st.title('GAMNED Marketing Tool')
+
+with header_col3:
+  st.text(' ')
   
 
 class GAMNED_UAE:
