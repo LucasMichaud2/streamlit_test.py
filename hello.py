@@ -676,7 +676,7 @@ with pcol5:
 ###################################### Creating Dictinary ###################################
 
 price_dict = {
-  'youtube': price_youtube, 'display': price_display, 'instragram': price_instagram, 'facebook': price_facebook,
+  'youtube': price_youtube, 'display': price_display, 'instagram': price_instagram, 'facebook': price_facebook,
   'linkedin': price_linkedin, 'search': price_search, 'native ads': price_nativead, 'amazon': price_amazon,
   'tiktok': price_tiktok, 'twitter': price_twitter, 'connected tv': price_connectedtv, 'snapchat': price_snapchat,
   'in game advertising': price_gamead, 'twitch': price_twitch, 'dooh': price_dooh, 'audio': price_audio,
