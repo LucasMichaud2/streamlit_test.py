@@ -676,7 +676,7 @@ sns.set_palette("Set1")
 if input_budget != 0:
   
   plt.figure(figsize=(8, 6))
-  ax = sns.scatterplot(data=merged_df, x='average', y=selected_objective, size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=merged_df['channel'])
+  ax = sns.scatterplot(data=merged_df, x='average', y=selected_objective, size='allowance', sizes=(10, 10000), alpha=0.0, legend=False, hue=merged_df['channel'])
   
   for index, row in merged_df.iterrows():
     label = row['channel']  # Get the label from the 'label' column
