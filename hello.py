@@ -476,6 +476,9 @@ else:
 #################################### First Bubble Chart ###################################
 
 merged_df = agg_rating4.merge(df_allowance, on='channel', how='inner')
+merged_df[selected_objective] = merged_df[selected_objective].apply(lambda x: round(x, 1))
+merged_df['average'] = merged_df['average'].apply(lambda x: round(x, 1))
+                                                                    
 
 st.dataframe(merged_df)
 
@@ -662,6 +665,30 @@ with budget_column2:
 
 st.text(' ')
 
+sns.set_palette("Spectral")
+
+
+
+#df_bubble['average'] = df_bubble['average'] * 5 / 25
+
+if input_budget != 0:
+  
+  plt.figure(figsize=(8, 6))
+  ax = sns.scatterplot(data=merged_df, x='average', y=selected_objective, size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=df_bubble['channel'])
+  
+  for index, row in merged_df.iterrows():
+    label = row['channel']  # Get the label from the 'label' column
+    ax.annotate(label, (row['average'], row[selected_objective]), fontsize=12, ha='center')
+
+  plt.xlim(merged_df['average'].min() - 0.5, merged_df['average'].max() + 0.5)
+  plt.ylim(merged_df[selected_objective].min() - 0.5, merged_df[selected_objective].max() + 0.5)
+  plt.gcf().set_facecolor('none')
+  st.pyplot(plt)
+
+             
+ 
+else:
+  st.text('Waiting for budget')
 
 st.text(' ')
 
