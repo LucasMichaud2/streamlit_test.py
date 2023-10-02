@@ -608,27 +608,65 @@ st.dataframe(df_budget)
 
 ################################ Cost Test ############################################
 
-col1, col2, col3, col4, col5 = st.columns(5)
+col1, col2, col3, col4, col5, col6 = st.columns(6)
 
 with col1:
   
   price_youtube = st.number_input('Youtube $', step=0.1, value=1.0)
+  price_nativead = st.number_input('Native Ads $', step=0.1, value=1.0)
 
 with col2:
-  
-  price_linkedin = st.number_input('Linkedin $', step=0.1, value=1.0)
+
+  price_display = st.number_input('Display $', step=0.1,  value=1.0)
+  price_amazon = st.number_input('Amazon $', step=0.1, value=1.0)
 
 with col3:
 
-  price_nativead = st.number_input('Native Ads $', step=0.1, value=1.0)
+  
+  price_instagram = st.number_input('Instagram $', step=0.1, value=1.0)
+  price_tiktok = st.number_input('TikTok $', step=0.1, value=1.0)
+  
 
 with col4:
 
-  price_display = st.number_input('Display $', step=0.1,  value=1.0)
+  price_facebook = st.number_input('Facebook $', step=0.1, value=1.0)
+  price_twitter = st.number_input('Twitter $', step=0.1, value=1.0)
+  
 
 with col5:
-
+  
+  price_linkedin = st.number_input('Linkedin $', step=0.1, value=1.0)
   price_connectedtv = st.number_input('Connected TV $', step=0.1,  value=1.0)
+
+with col6:
+
+  price_search = st.number_input('Search $', step=0.1, value=1.0)
+  price_snapchat = st.number_input('Snapchat $', step=0.1, value=1.0)
+
+pcol1, pcol2, pcol3, pcol4, pcol5 = st.columns(5)
+
+with pcol1:
+
+  price_gamead = st.number_input('In game ad $', step=0.1, value=1.0)
+
+with pcol2:
+
+  price_twitch = st.number_input('Twitch $', step=0.1, value=1.0)
+
+with pcol3:
+
+  price_dooh = st.number_input('DOOH $', step=0.1, value=1.0)
+
+with pcol4:
+
+  price_audio = st.number_input('Audio $', step=0.1, value=1.0)
+
+with pcol5:
+
+  price_waze = st.number_input('Waze $', step=0.1, value=1.0)
+
+  
+  
 
 ######################################## quick Test ##########################################
 
