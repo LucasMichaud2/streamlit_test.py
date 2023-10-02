@@ -564,9 +564,11 @@ st.pyplot(plt)
 
 st.text(' ')
 
+st.title('Budget Allocation')
+
 budget_column1, budget_column2 = st.columns(2)
 
-st.title('Budget Allocation')
+
 
 with budget_column1:
   
