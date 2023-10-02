@@ -566,7 +566,7 @@ st.text(' ')
 
 budget_column1, budget_column2 = st.columns(2)
 
-st.subheader('Budget Allocation')
+st.title('Budget Allocation')
 
 with budget_column1:
   
@@ -597,26 +597,6 @@ with budget_column2:
 
 st.text(' ')
 
-if input_budget == 0:
-  st.text('Awaiting for budget...')
-
-else: 
-
-  fig4, ax4 = plt.subplots()
-  ax4.pie(df_allowance['allowance'], labels=df_allowance['channel'], startangle=90, wedgeprops=dict(width=0.4), colors=custom_colors1, autopct='%1.1f%%', pctdistance=0.85,
-         textprops=dict(color="black"))
-  
-  
-  center_circle = plt.Circle((0,0), 0.7, fc='white')
-  fig4.gca().add_artist(center_circle)
-  
-  middle_text = ax4.text(0, 0, f"Total: {input_budget} USD", ha='center', va='center', fontsize=12, color='black', weight='bold')
-  
-  ax4.set_title('Budget Allocation')
-  
-  ax4.axis('equal')
-  
-  st.pyplot(fig4)
 
 st.text(' ')
 
