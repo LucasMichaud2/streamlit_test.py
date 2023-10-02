@@ -527,7 +527,7 @@ df_freq['conversion'] = df_freq['conversion'].round(1)
 st.text(' ')
 
 
-st.dataframe(displayed_format)
+st.table(displayed_format)
 
 
 st.text(' ')
