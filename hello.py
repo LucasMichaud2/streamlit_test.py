@@ -892,7 +892,7 @@ else:
   df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
 
 
-st.title(Pricing Optimization)
+st.title('Pricing Optimization')
 
   
 st.dataframe(df_allowance2)
