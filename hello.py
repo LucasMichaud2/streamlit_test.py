@@ -683,6 +683,9 @@ price_dict = {
   'waze': price_waze
 }
 
+######################################## Mapping prices #####################################
+
+df_price_rating['price'] = df_price_rating['channel'].map(price_dict)
 
 
   
