@@ -28,10 +28,22 @@ with header_col2:
   st.text(' ')
   st.text(' ')
   st.text(' ')
-  st.title('Marketing Tool')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.title('Marketing')
 
 with header_col3:
   st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.title('Tool')
   
 
 class GAMNED_UAE:
