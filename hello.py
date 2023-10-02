@@ -909,7 +909,7 @@ st.dataframe(df_bubble)
 if input_budget != 0:
   df_bubble['allowance'] = df_bubble['allowance']
   plt.figure(figsize=(8, 6))
-  ax = sns.scatterplot(data=df_bubble, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=0.5, legend=False, hue=df_bubble['channel'])
+  ax = sns.scatterplot(data=df_bubble, x='average', y='price', size='allowance', sizes=(10, 10000), alpha=1.0, legend=False, hue=df_bubble['channel'])
   
   for index, row in df_bubble.iterrows():
     label = row['channel']  # Get the label from the 'label' column
