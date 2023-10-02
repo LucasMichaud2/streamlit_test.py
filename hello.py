@@ -24,7 +24,10 @@ with header_col1:
   st.image(gamned_logo_url)
 
 with header_col2:
-
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
+  st.text(' ')
   st.title('GAMNED Marketing Tool')
   
 
