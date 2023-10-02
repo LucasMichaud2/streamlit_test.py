@@ -598,7 +598,7 @@ st.markdown(scrollable_table, unsafe_allow_html=True)
 
 st.text(' ')
 
-st.subheader("Heatmap")
+st.title("Heatmap")
 
 heatmap_size = 6
 heatmap_data = heatmap_data.reset_index()
