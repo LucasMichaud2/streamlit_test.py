@@ -332,7 +332,7 @@ agg_rating_max = agg_rating3['average'].max()
 agg_rating3['average'] = ((agg_rating3['average'] - agg_rating_min) / (agg_rating_max - agg_rating_min))*100
 output_rating = agg_rating3.copy()
 
-st.dataframe(agg_rating4)
+
                         
 
 #################################### Building Heatmap ####################################
@@ -482,7 +482,6 @@ merged_df['average'] = merged_df['average'] * 5 / 25
 merged_df[selected_objective] = merged_df[selected_objective] * 5 / 150
                                                                     
 
-st.dataframe(merged_df)
 
 
 
@@ -785,7 +784,7 @@ df_price_rating['Squared Average'] = df_price_rating['average'].apply(square_val
 df_price_rating['ratio'] = df_price_rating['Squared Average'] / df_price_rating['price']
 df_price_rating = df_price_rating.sort_values(by='ratio', ascending=False)
 
-st.dataframe(df_price_rating)
+
 
 
 
@@ -892,6 +891,9 @@ else:
   columns_to_drop2 = ['average', 'index', 'Squared Average', 'ratio', 'distribution']
   df_allowance2 = df_budget2.drop(columns=columns_to_drop2)
 
+
+st.title(Pricing Optimization)
+
   
 st.dataframe(df_allowance2)
 
@@ -904,7 +906,7 @@ column_budget_drop = ['index', 'ratio', 'distribution']
 df_bubble = df_bubble.drop(columns=column_budget_drop)
 df_bubble['average'] = df_bubble['average'] * 5 / 25
 df_bubble['price'] = 1 / df_bubble['price']
-st.dataframe(df_bubble)
+
 
 if input_budget != 0:
   df_bubble['allowance'] = df_bubble['allowance']
@@ -921,14 +923,14 @@ if input_budget != 0:
   st.pyplot(plt)
 
              
-  st.dataframe(df_bubble)
+
 else:
   st.text('Waiting for budget')
 
 
 
 
-st.dataframe(df_price_rating)
+
 
 
 
