@@ -17,8 +17,8 @@ age_date = pd.read_csv(age_url)
 
 gamned_logo_url = 'https://raw.github.com/LucasMichaud2/streamlit_test.py/main/Logo_G_Gamned_red_baseline.jpg'
 
-width = 400
-height = 300
+width = 50
+height = 40
 st.image(gamned_logo_url, width=width, height=height, use_container_width=False)
 
 
