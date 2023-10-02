@@ -582,8 +582,6 @@ df_freq['conversion'] = df_freq['conversion'].round(1)
 st.text(' ')
 
 
-st.dataframe(displayed_format)
-
 styled_df_html = displayed_format.to_html(classes='styled-dataframe', escape=False)
 
 # Create a scrollable table using HTML and CSS
