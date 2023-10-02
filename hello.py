@@ -851,7 +851,7 @@ sns.set_palette("Spectral")
 
 column_budget_drop = ['index', 'ratio', 'distribution']
 df_bubble = df_bubble.drop(columns=column_budget_drop)
-#df_bubble_chart['average'] = df_bubble_chart['average'] * 5 / 25
+df_bubble['average'] = df_bubble['average'] * 5 / 25
 df_bubble['price'] = 1 / df_bubble['price']
 st.dataframe(df_bubble)
 
