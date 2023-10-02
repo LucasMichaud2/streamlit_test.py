@@ -529,6 +529,8 @@ st.text(' ')
 
 st.dataframe(displayed_format)
 
+st.write(displayed_format.to_html(classes='styled-dataframe', escape=False), unsafe_allow_html=True)
+
 
 st.text(' ')
 
