@@ -18,9 +18,15 @@ age_date = pd.read_csv(age_url)
 gamned_logo_url = 'https://raw.github.com/LucasMichaud2/streamlit_test.py/main/Logo_G_Gamned_red_baseline.jpg'
 
 
-st.image(gamned_logo_url)
+header_col1, header_col2 = st.columns(2)
 
+with header_col1:
+  st.image(gamned_logo_url)
 
+with header_col2:
+
+  st.title('GAMNED Marketing Tool')
+  
 
 class GAMNED_UAE:
 
@@ -238,7 +244,6 @@ objective_df = pd.DataFrame(objective_list)
 target_list = ['b2c', 'b2b']
 target_df = pd.DataFrame(target_list)
 
-st.title('GAMNED Marketing Tool')
 st.text(' ')
 st.sidebar.title('Heatmap Parameters')
 
