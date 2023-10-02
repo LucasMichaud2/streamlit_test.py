@@ -732,7 +732,9 @@ def square_value(x):
 
 df_price_rating['Squared Average'] = df_price_rating['average'].apply(square_value)
 df_price_rating['ratio'] = df_price_rating['Squared Average'] / df_price_rating['price']
-df_price_rating = df_price_rating.sort_values(by='ratio')
+df_price_rating = df_price_rating.sort_values(by='ratio', ascending=False)
+
+st.dataframe(df_price_rating)
 
 
 
