@@ -350,6 +350,7 @@ cost_rating = cost_rating.reset_index()
 cost_rating_std = cost_rating['average'].std()
 cost_rating_mean = cost_rating['average'].mean()
 cost_rating['norm'] = (cost_rating['average'] - cost_rating_mean) / cost_rating_std
+df_price_rating = cost_rating.copy()
 threshold = cost_rating['norm'].max() - 0.50*cost_rating['norm'].max()
 
 # df_allowance now contains the DataFrame with the specified columns dropped
@@ -725,7 +726,7 @@ else:
 
 
 
-st.dataframe(output_rating)
+st.dataframe(df_price_rating)
 
 
 
