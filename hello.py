@@ -326,6 +326,7 @@ channel_count2 = channel_count.sort_values(by='channel')
 agg_rating2['average'] = agg_rating2[selected_objective] / channel_count2['count']
 agg_rating3 = agg_rating2.sort_values(by='average', ascending=False)
 cost_rating = agg_rating3.copy()
+agg_rating4 = agg_rating3.copy()
 agg_rating_min = agg_rating3['average'].min()
 agg_rating_max = agg_rating3['average'].max()
 agg_rating3['average'] = ((agg_rating3['average'] - agg_rating_min) / (agg_rating_max - agg_rating_min))*100
