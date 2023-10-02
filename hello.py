@@ -42,7 +42,6 @@ with header_col2:
   st.text(' ')
   st.text(' ')
   st.text(' ')
-  st.text(' ')
   
  
   st.title('Marketing Tool')
