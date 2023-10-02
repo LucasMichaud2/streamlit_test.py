@@ -478,6 +478,8 @@ else:
 merged_df = agg_rating4.merge(df_allowance, on='channel', how='inner')
 merged_df[selected_objective] = merged_df[selected_objective].apply(lambda x: round(x, 1))
 merged_df['average'] = merged_df['average'].apply(lambda x: round(x, 1))
+merged_df['average'] = merged_df['average'] * 5 / 25
+merged_df[selected_objective] = merged_df[selected_objective] * 5 / 150
                                                                     
 
 st.dataframe(merged_df)
