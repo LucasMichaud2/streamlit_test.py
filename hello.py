@@ -592,7 +592,7 @@ scrollable_table = f"""
 """
 
 # Display the scrollable table
-st.title("Scrollable DataFrame Example")
+st.title("Top Formats")
 st.markdown(scrollable_table, unsafe_allow_html=True)
 
 
