@@ -686,7 +686,8 @@ price_dict = {
 ######################################## Mapping prices #####################################
 
 df_price_rating['price'] = df_price_rating['channel'].map(price_dict)
-
+df_price_rating = df_price_rating.drop(['norm'], axis=1)
+df_price_rating['average'] = df_price_rating['average'].apply(lambda x: round(x, 2))
 
   
   
