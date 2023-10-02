@@ -470,7 +470,14 @@ else:
   df_budget['allowance'] = input_budget * df_budget['distribution']
   columns_to_drop = ['average', 'index', 'norm', 'distribution']
   df_allowance = df_budget.drop(columns=columns_to_drop)
-  
+
+
+
+#################################### First Bubble Chart ###################################
+
+merged_df = agg_rating4.merge(df_allowance, on='channel', how='inner')
+
+st.dataframe(merged_df)
 
 
 
