@@ -666,7 +666,7 @@ with budget_column2:
 
 st.text(' ')
 
-sns.set_palette("Set1")
+sns.set_palette("crest")
 
 
 
