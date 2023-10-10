@@ -603,6 +603,9 @@ st.text(' ')
 # Display the scrollable table
 st.title("Top Formats")
 
+displayed_format = displayed_format[~displayed_format['channel'].isin(excluded_channel)]
+displayed_format = displayed_format.reset_index(drop=True)
+
 st.dataframe(displayed_format)
 
 
