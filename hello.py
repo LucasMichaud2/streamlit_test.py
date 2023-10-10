@@ -297,6 +297,8 @@ df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 full_format_rating = df_rating3.copy()
 format_rating = df_rating3.copy()
+format_rating = format_rating[~format_rating['channel'].isin(excluded_channel)]
+format_rating = format_rating.reset_index(drop=True)
 format_rating['format'] = format_rating['channel'] + ' - ' + format_rating['formats']
 format_rating = format_rating[['channel', 'formats', 'format', selected_objective]]
 min_format = full_format_rating[selected_objective].min()
@@ -312,8 +314,7 @@ displayed_format = format_rating.drop(columns=column_format_drop)
 st.dataframe(format_rating)
 
 ################################# Second heatmap #######################################
-#format_rating = format_rating[~format_rating['channel'].isin(excluded_channel)]
-#format_rating = format_rating.reset_index(drop=True)
+
 second_heatmap = format_rating.head(36)
 heatmap_data = second_heatmap['norm']
 heatmap_labels = second_heatmap['format']
