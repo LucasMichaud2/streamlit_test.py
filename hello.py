@@ -309,8 +309,11 @@ format_rating = format_rating.drop(['index'], axis=1)
 column_format_drop = ['format', 'norm', 'mapped_colors']
 displayed_format = format_rating.drop(columns=column_format_drop)
 
-################################# Second heatmap #######################################
+st.dataframe(format_rating)
 
+################################# Second heatmap #######################################
+#format_rating = format_rating[~format_rating['channel'].isin(excluded_channel)]
+#format_rating = format_rating.reset_index(drop=True)
 second_heatmap = format_rating.head(36)
 heatmap_data = second_heatmap['norm']
 heatmap_labels = second_heatmap['format']
