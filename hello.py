@@ -247,6 +247,9 @@ class GAMNED_UAE:
 def round_5(x): 
   return round(x/5) * 5
 
+excluded_channel_list = ['youtube', 'instagram', 'display', 'facebook', 'linkedin', 'search', 'snapchat', 'tiktok', 'native ads', 'twitter', 'twitch',
+                    'in game advertising', 'amazon', 'audio', 'waze', 'dooh', 'connected tv']
+
 color_dictionary = {
     0: '#F1C40F', 5: '#F4D03F', 10: '#F7DC6F', 15: '#F9E79F', 20: '#FAD7A0',
     25: '#F8C471', 30: '#F5B041', 35: '#F39C12', 40: '#E67E22', 45: '#D35400',
@@ -271,6 +274,7 @@ selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.multiselect("Select an age", age_df)
 selected_age = ', '.join(selected_age)
 selected_target = st.sidebar.selectbox('Select target', target_df)
+excluded_channel = st.sidebar.multiselect("Channel to exclude", excluded_channel_list)
 st.sidebar.title('Budget Parameters')
 input_budget = st.sidebar.number_input('Budget', value=0)
 channel_number = st.sidebar.number_input('Number of channels', value=0)
