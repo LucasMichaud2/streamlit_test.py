@@ -295,11 +295,13 @@ if selected_target == 'b2b':
   df_rating1 = df_rating1.reset_index()
 df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
+df_rating3 = df_rating3[~df_rating3['channel'].isin(excluded_channel)]
+df_rating3 = df_rating3.reset_index(drop=True)
 st.dataframe(df_rating3)
 full_format_rating = df_rating3.copy()
 format_rating = df_rating3.copy()
-format_rating = format_rating[~format_rating['channel'].isin(excluded_channel)]
-format_rating = format_rating.reset_index(drop=True)
+#format_rating = format_rating[~format_rating['channel'].isin(excluded_channel)]
+#format_rating = format_rating.reset_index(drop=True)
 format_rating['format'] = format_rating['channel'] + ' - ' + format_rating['formats']
 format_rating = format_rating[['channel', 'formats', 'format', selected_objective]]
 min_format = full_format_rating[selected_objective].min()
