@@ -300,8 +300,6 @@ df_rating3 = df_rating3.reset_index(drop=True)
 st.dataframe(df_rating3)
 full_format_rating = df_rating3.copy()
 format_rating = df_rating3.copy()
-#format_rating = format_rating[~format_rating['channel'].isin(excluded_channel)]
-#format_rating = format_rating.reset_index(drop=True)
 format_rating['format'] = format_rating['channel'] + ' - ' + format_rating['formats']
 format_rating = format_rating[['channel', 'formats', 'format', selected_objective]]
 min_format = full_format_rating[selected_objective].min()
