@@ -4,7 +4,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
-from streamlit_elements import elements, mui, html
+from streamlit_elements import elements, mui, html, nivo
 
 
 objective_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Objectives_updated-Table%201.csv'
