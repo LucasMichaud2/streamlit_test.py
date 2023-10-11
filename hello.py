@@ -1047,8 +1047,8 @@ with elements("nivo_charts"):
 with elements("nivo_charts"):
 
   heatmap_data = [
-    {"rowLabel": "Row 1", "colLabel": "Column 1", "value": 10},
-    {"rowLabel": "Row 1", "colLabel": "Column 2", "value": 20},
+    {"rowLabel": "Row 1", "value": 10},
+    {"rowLabel": "Row 1", "value": 20},
     # Add more data points here
   ]
   
