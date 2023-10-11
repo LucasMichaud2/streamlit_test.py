@@ -1043,20 +1043,19 @@ with elements("nivo_charts"):
 
 ##################################### Formatting for Nivo Heatmap #####################################
 
-heatmap_data = [
+
+with elements("nivo_charts"):
+
+  heatmap_data = [
     {"rowLabel": "Row 1", "colLabel": "Column 1", "value": 10},
     {"rowLabel": "Row 1", "colLabel": "Column 2", "value": 20},
     # Add more data points here
-]
-
-
-
-with elements("nivo_charts"):
+  ]
   
   with mui.Box(sx={"height": 500}):
 
     nivo.HeatMap(
-      data=heatmap_data,
+      data=heatmap_data
       
     )
 
