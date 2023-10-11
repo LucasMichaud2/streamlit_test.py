@@ -1056,7 +1056,8 @@ with elements("nivo_heatmap"):
   with mui.Box(sx={"height": 500}):
 
     nivo.Pie(
-      data=heatmap_data
+      data=heatmap_data,
+      colors={scheme:'accent'}
       
     )
 
