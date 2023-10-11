@@ -1044,7 +1044,7 @@ with elements("nivo_charts"):
 ##################################### Formatting for Nivo Heatmap #####################################
 
 
-with elements("nivo_charts"):
+with elements("nivo_heatmap"):
 
   heatmap_data = [
     {"rowLabel": "Row 1", "value": 10},
