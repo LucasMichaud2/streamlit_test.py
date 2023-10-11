@@ -1032,7 +1032,7 @@ with elements("nivo_charts"):
                 "tooltip": {
                     "container": {
                         "background": "#FFFFFF",
-                        "color": "#31333F",
+                        "color": "#FFFFFF",
                     }
                 }
             }
