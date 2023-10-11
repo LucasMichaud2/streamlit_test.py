@@ -1047,7 +1047,7 @@ with elements("nivo_charts"):
 with elements("nivo_heatmap"):
 
   heatmap_data = [
-    {"Label": "php", "value": 10, "color": "hsl(299, 70%, 50%}",
+    {"Label": "php", "value": 10, "color": "hsl(299, 70%, 50%)"},
     {"Label": "java", "value": 20, "color": "hsl(28, 70%, 50%)"},
     {"Label": "Python", "value": 60, "color": "hsl(8, 70%, 50%)"}
     # Add more data points here
