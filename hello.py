@@ -1043,7 +1043,11 @@ with elements("nivo_charts"):
 
 ##################################### Formatting for Nivo Heatmap #####################################
 
-nivo_heatmap_dict = second_heatmap.set_index('norm')['format'].to_dict()
+heatmap_data = [
+    {"rowLabel": "Row 1", "colLabel": "Column 1", "value": 10},
+    {"rowLabel": "Row 1", "colLabel": "Column 2", "value": 20},
+    # Add more data points here
+]
 
 
 
@@ -1052,7 +1056,7 @@ with elements("heatmap"):
   with mui.Box(sx={"height": 500}):
 
     nivo.HeatMap(
-      data=nivo_heatmap_dict,
+      data=heatmap_data,
       valueFormat=">-.2f"
     )
 
