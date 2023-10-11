@@ -1057,7 +1057,7 @@ with elements("nivo_heatmap"):
 
     nivo.Pie(
       data=heatmap_data,
-      colors={ "theme": "accent" },
+      #colors={ "theme": "accent" },
       
     )
 
