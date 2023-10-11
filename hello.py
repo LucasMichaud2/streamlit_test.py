@@ -1049,11 +1049,11 @@ with elements("nivo_heatmap"):
   heatmap_data = [
     {"id": "php", "Label": "php", "value": 10, "color": "hsl(299, 70%, 50%)"},
     {"id": "java", "Label": "java", "value": 20, "color": "hsl(28, 70%, 50%)"},
-    {"id": "python", "Label": "Python", "value": 60, "color": "hsl(8, 70%, 50%)"}
+    {"id": "python", "Label": "Python", "value": 60, "color": "hsl(150, 70%, 50%)"}
     # Add more data points here
   ]
   
-  with mui.Box(sx={"height": 500}):
+  with mui.Box(sx={"height": 700}):
 
     nivo.Pie(
       data=heatmap_data,
