@@ -1057,7 +1057,7 @@ with elements("heatmap"):
 
     nivo.HeatMap(
       data=heatmap_data,
-      valueFormat=">-.2f"
+      
     )
 
 
