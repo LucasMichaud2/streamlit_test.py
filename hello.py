@@ -1044,7 +1044,7 @@ with elements("nivo_charts"):
 ##################################### Formatting for Nivo Heatmap #####################################
 
 
-with elements("nivo_heatmap"):
+with elements("nivo_pie"):
 
   heatmap_data = [
     {"id": "php", "Label": "php", "value": 10, "color": "hsl(299, 70%, 50%)"},
@@ -1062,6 +1062,42 @@ with elements("nivo_heatmap"):
       
     )
 
+
+with elements("nivo_heatmap"):
+
+  nivo_data = [
+    {
+      "id": "Japan",
+      "data": [
+        {
+          "x": "Train",
+          "y": -30524
+        },
+        {
+          "x": "Subway",
+          "y": 85851
+        }
+      ]
+    },
+    {
+      "id": "France",
+      "data": [
+        {
+          "x": "Train",
+          "y": -77344
+        },
+        {
+          "x": "Subway",
+          "y": 25260
+        }
+      ]
+    }
+  ]
+  with mui.Box(sx={"height": 500}):
+    nivo.HeatMap(
+      data=nivo_data,
+
+    )
 
 
       
