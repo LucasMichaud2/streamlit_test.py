@@ -1041,12 +1041,27 @@ with elements("nivo_charts"):
 
 
 
-#with elements("heatmap"):
-  
- # with mui.Box(sx={"height": 500}):
+##################################### Formatting for Nivo Heatmap #####################################
 
-  #  nivo.HeatMap(
-   #   data = 
+nivo_heatmap_dict = second_heatmap.set_index('format')['norm'].to_dict()
+
+
+
+with elements("heatmap"):
+  
+  with mui.Box(sx={"height": 500}):
+
+    nivo.HeatMap(
+      data=nivo_heatmap_dict,
+      valueFormat=">-.2f",
+      width=500,
+      height=500
+    )
+
+
+
+      
+      
     
   
 
