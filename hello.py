@@ -1047,14 +1047,15 @@ with elements("nivo_charts"):
 with elements("nivo_heatmap"):
 
   heatmap_data = [
-    {"rowLabel": "Row 1", "value": 10},
-    {"rowLabel": "Row 1", "value": 20},
+    {"Label": "php", "value": 10},
+    {"Label": "java", "value": 20},
+    {"Label": "Python", "value": 60}
     # Add more data points here
   ]
   
   with mui.Box(sx={"height": 500}):
 
-    nivo.HeatMap(
+    nivo.Pie(
       data=heatmap_data
       
     )
