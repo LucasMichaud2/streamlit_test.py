@@ -1043,7 +1043,7 @@ with elements("nivo_charts"):
 
 ##################################### Formatting for Nivo Heatmap #####################################
 
-nivo_heatmap_dict = second_heatmap.set_index('format')['norm'].to_dict()
+nivo_heatmap_dict = second_heatmap.set_index('norm')['format'].to_dict()
 
 
 
