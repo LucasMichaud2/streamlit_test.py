@@ -313,13 +313,14 @@ format_rating = format_rating.drop(['index'], axis=1)
 column_format_drop = ['format', 'norm', 'mapped_colors']
 displayed_format = format_rating.drop(columns=column_format_drop)
 
-st.dataframe(format_rating)
 
 ################################# Second heatmap #######################################
 
 second_heatmap = format_rating.head(36)
 heatmap_data = second_heatmap['norm']
 heatmap_labels = second_heatmap['format']
+
+st.dataframe(second_heatmap)
 
 ################################## Computing Scores ###################################
 
@@ -1045,7 +1046,8 @@ with elements("heatmap"):
   
   with mui.Box(sx={"height": 500}):
 
-    nivo.HeatMap
+    nivo.HeatMap(
+      data = 
     
   
 
