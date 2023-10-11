@@ -1053,7 +1053,7 @@ with elements("nivo_heatmap"):
     # Add more data points here
   ]
   
-  with mui.Box(sx={"height": 700}):
+  with mui.Box(sx={"height": 400}):
 
     nivo.Pie(
       data=heatmap_data,
