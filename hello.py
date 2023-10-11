@@ -1051,7 +1051,7 @@ heatmap_data = [
 
 
 
-with elements("heatmap"):
+with elements("nivo_charts"):
   
   with mui.Box(sx={"height": 500}):
 
