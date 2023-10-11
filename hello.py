@@ -991,7 +991,7 @@ with elements("nivo_charts"):
         { "taste": "sunny", "chardonay": 119, "carmenere": 94, "syrah": 103 },
     ]
 
-  DATA = pd.DataFrame(DATA)
+    DATA = pd.DataFrame(DATA)
 
     with mui.Box(sx={"height": 500}):
         nivo.Radar(
