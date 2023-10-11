@@ -1042,12 +1042,12 @@ with elements("nivo_charts"):
 
 
 
-with elements("heatmap"):
+#with elements("heatmap"):
   
-  with mui.Box(sx={"height": 500}):
+ # with mui.Box(sx={"height": 500}):
 
-    nivo.HeatMap(
-      data = 
+  #  nivo.HeatMap(
+   #   data = 
     
   
 
