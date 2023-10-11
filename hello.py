@@ -324,7 +324,7 @@ df_nivohm = df_nivohm.drop(columns=['channel', 'formats', selected_objective, 'm
 id_hm = 6
 
 df_nivohm['id'] = [(i // id_hm) + 1 for i in range(len(df_nivohm))]
-
+df_nivohm['id'] = df_nivohm['id'].astype(str)
 
 st.dataframe(second_heatmap)
 
