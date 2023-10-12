@@ -1130,6 +1130,10 @@ with elements('nivo_heatmap2'):
   
     nivo_data1.append(format_data)
 
+  st.write(nivo_data1)
+
+
+
   with mui.Box(sx={"height": 500}):
     nivo.HeatMap(
       data=nivo_data1,
