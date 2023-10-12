@@ -1107,6 +1107,37 @@ with elements("nivo_heatmap"):
 
     )
 
+with elements('nivo_heatmap2'):
+  
+
+  nivo_data1 = []
+  
+  for index, frame in df_nivohm.groupby('id'):
+  
+    format_data = {
+      'id': index,
+      'data': []
+    }
+  
+    for _, row in frame.iterrows():
+  
+      score_data = {
+        'x': row['format'],
+        'y': row['norm']
+  
+      }
+      format_data['data'].append(score_data)
+  
+    nivo_data1.append(format_data)
+
+  with mui.Box(sx={"height": 500}):
+    nivo.HeatMap(
+      data=nivo_data1,
+    )
+
+
+
+
 
 
 
