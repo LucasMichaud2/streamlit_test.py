@@ -1140,7 +1140,7 @@ with elements('nivo_heatmap1'):
     )
 
 
-with elemnents('nivo_heatmap2'):
+with elements('nivo_heatmap2'):
   
 
   nivo_data2 = [
