@@ -325,7 +325,9 @@ id_hm = 6
 
 df_nivohm['id'] = [(i // id_hm) + 1 for i in range(len(df_nivohm))]
 df_nivohm['id'] = df_nivohm['id'].astype(str)
-df_nivohm['rows'] = range(1, 7) * (len(df_nivohm) // 6) + list(range(1, 1 + len(df_nivohm) % 6))
+values_to_cycle = ['1', '2', '3', '4', '5', '6']
+df_nivohm['rows'] = [values_to_cycle[i % len(values_to_cycle)] for i in range(len(df_nivohm))]
+
 st.dataframe(second_heatmap)
 
 st.dataframe(df_nivohm)
