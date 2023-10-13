@@ -1184,5 +1184,14 @@ with elements('heeeeat'):
   )
   with mui.Box(sx={"height": 500}):
 # Display the heatmap
-    nivo.HeatMap(heatmap_chart)
+    nivo.HeatMap(
+      data=heatmap_data10,
+      xtickvalues=x_axis_labels,
+      ytickvalues=y_axis_labels,
+      width=600,
+      height=400,
+      cellHover='value',  # Display cell values when hovering
+      cellHoverTextAnchor='middle',  # Center the text in cells
+      cellHoverFontSize=14,  # Set font size for cell labels
+    )
 
