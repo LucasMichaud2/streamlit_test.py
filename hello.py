@@ -321,7 +321,7 @@ second_heatmap = format_rating2.head(36)
 heatmap_data = second_heatmap['norm']
 heatmap_labels = second_heatmap['format']
 df_nivohm = second_heatmap.copy()
-#df_nivohm = df_nivohm.drop(columns=['channel', 'formats', selected_objective, 'mapped_colors'])
+df_nivohm = df_nivohm.drop(columns=['channel', 'formats', selected_objective])
 id_hm = 6
 
 df_nivohm['id'] = [(i // id_hm) + 1 for i in range(len(df_nivohm))]
