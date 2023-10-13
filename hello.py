@@ -1156,11 +1156,12 @@ with elements('nivo_heatmap1'):
 
 
 
-# Create a sample DataFrame
+
+# Create a sample DataFrame with lists of the same length
 data = pd.DataFrame({
     'Row_Labels': ['Row1', 'Row2', 'Row3', 'Row4'],
     'Column_Labels': ['Column1', 'Column2', 'Column3', 'Column4'],
-    'Values': [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160]
+    'Values': [10, 20, 30, 40]
 })
 
 # Reshape the data for the heatmap
@@ -1184,15 +1185,4 @@ heatmap_chart = heatmap(
 
 # Display the heatmap
 st.nivo_chart(heatmap_chart)
-
-
-
-
-      
-      
-    
-  
-
-
-
 
