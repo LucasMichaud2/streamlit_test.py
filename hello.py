@@ -1139,13 +1139,13 @@ with elements('nivo_heatmap1'):
   with mui.Box(sx={"height": 500}):
     nivo.HeatMap(
       data=nivo_data1,
-      colors={{
+      colors={
         "type": 'diverging',
         "scheme": 'yellow_orange_red',
         "minValue": 0,
         "maxValue": 100,
         "divergeAt": 0.5
-      }}
+      }
     )
 
 
