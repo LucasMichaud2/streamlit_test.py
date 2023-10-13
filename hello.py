@@ -306,6 +306,7 @@ format_rating = format_rating[['channel', 'formats', 'format', selected_objectiv
 min_format = full_format_rating[selected_objective].min()
 max_format = full_format_rating[selected_objective].max()
 format_rating['norm'] = (format_rating[selected_objective] - min_format) / (max_format - min_format)*100
+format_rating2 = format_rating.copy()
 format_rating['norm'] = format_rating['norm'].apply(round_5)
 format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
 format_rating = format_rating.reset_index()
@@ -316,7 +317,7 @@ displayed_format = format_rating.drop(columns=column_format_drop)
 
 ################################# Second heatmap #######################################
 
-second_heatmap = format_rating.head(36)
+second_heatmap = format_rating2.head(36)
 heatmap_data = second_heatmap['norm']
 heatmap_labels = second_heatmap['format']
 df_nivohm = second_heatmap.copy()
@@ -1132,7 +1133,6 @@ with elements('nivo_heatmap1'):
   
     nivo_data1.append(format_data)
 
-  st.write(nivo_data1)
 
 
 
