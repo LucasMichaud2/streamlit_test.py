@@ -325,6 +325,8 @@ id_hm = 6
 
 df_nivohm['id'] = [(i // id_hm) + 1 for i in range(len(df_nivohm))]
 df_nivohm['id'] = df_nivohm['id'].astype(str)
+df_nivohm['rows'] = range(1, len(df_nivohm) + 1)
+df_nivohm['rows'] = df_nivohm['rows'] % 6 + 1
 
 st.dataframe(second_heatmap)
 
