@@ -1110,7 +1110,7 @@ with elements("nivo_heatmap"):
         {
           "x": "Subway",
           "y": 25260,
-          "label": "Franck:
+          "label": "Franck"
         }
       ]
     }
