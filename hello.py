@@ -1172,15 +1172,7 @@ with elements('heeeeat'):
   y_axis_labels = ['LabelA', 'LabelB', 'LabelC', 'LabelD']
   
   # Create the Nivo heatmap with custom labels for axes and cellHover for custom cell labels
-  heatmap_chart = heatmap(
-      heatmap_data10,
-      xtickvalues=x_axis_labels,
-      ytickvalues=y_axis_labels,
-      width=600,
-      height=400,
-      cellHover='value',  # Display cell values when hovering
-      cellHoverTextAnchor='middle',  # Center the text in cells
-      cellHoverFontSize=14,  # Set font size for cell labels
+
   )
   with mui.Box(sx={"height": 500}):
 # Display the heatmap
