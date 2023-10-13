@@ -1149,7 +1149,7 @@ with elements('nivo_heatmap1'):
         "maxValue": 10000,
         "divergeAt": 0.5,
       },
-      label='rows',
+      label='id',
     )
 
 
