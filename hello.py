@@ -1155,34 +1155,34 @@ with elements('nivo_heatmap1'):
 
 
 
-
+with elements('heeeeat'):
 
 # Create a sample DataFrame with lists of the same length
-data = pd.DataFrame({
-    'Row_Labels': ['Row1', 'Row2', 'Row3', 'Row4'],
-    'Column_Labels': ['Column1', 'Column2', 'Column3', 'Column4'],
-    'Values': [10, 20, 30, 40]
-})
-
-# Reshape the data for the heatmap
-heatmap_data = data.pivot(index='Row_Labels', columns='Column_Labels', values='Values')
-
-# Define custom labels for the x and y axes
-x_axis_labels = ['Custom1', 'Custom2', 'Custom3', 'Custom4']
-y_axis_labels = ['LabelA', 'LabelB', 'LabelC', 'LabelD']
-
-# Create the Nivo heatmap with custom labels for axes and cellHover for custom cell labels
-heatmap_chart = heatmap(
-    heatmap_data,
-    xtickvalues=x_axis_labels,
-    ytickvalues=y_axis_labels,
-    width=600,
-    height=400,
-    cellHover='value',  # Display cell values when hovering
-    cellHoverTextAnchor='middle',  # Center the text in cells
-    cellHoverFontSize=14,  # Set font size for cell labels
-)
-
+  data10 = pd.DataFrame({
+      'Row_Labels': ['Row1', 'Row2', 'Row3', 'Row4'],
+      'Column_Labels': ['Column1', 'Column2', 'Column3', 'Column4'],
+      'Values': [10, 20, 30, 40]
+  })
+  
+  # Reshape the data for the heatmap
+  heatmap_data10 = data.pivot(index='Row_Labels', columns='Column_Labels', values='Values')
+  
+  # Define custom labels for the x and y axes
+  x_axis_labels = ['Custom1', 'Custom2', 'Custom3', 'Custom4']
+  y_axis_labels = ['LabelA', 'LabelB', 'LabelC', 'LabelD']
+  
+  # Create the Nivo heatmap with custom labels for axes and cellHover for custom cell labels
+  heatmap_chart = heatmap(
+      heatmap_data,
+      xtickvalues=x_axis_labels,
+      ytickvalues=y_axis_labels,
+      width=600,
+      height=400,
+      cellHover='value',  # Display cell values when hovering
+      cellHoverTextAnchor='middle',  # Center the text in cells
+      cellHoverFontSize=14,  # Set font size for cell labels
+  )
+  with mui.Box(sx={"height": 500}):
 # Display the heatmap
-st.nivo_chart(heatmap_chart)
+    nivo.HeatMap(heatmap_chart)
 
