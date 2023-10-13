@@ -1165,7 +1165,7 @@ with elements('heeeeat'):
   })
   
   # Reshape the data for the heatmap
-  heatmap_data10 = data.pivot(index='Row_Labels', columns='Column_Labels', values='Values')
+  heatmap_data10 = data10.pivot(index='Row_Labels', columns='Column_Labels', values='Values')
   
   # Define custom labels for the x and y axes
   x_axis_labels = ['Custom1', 'Custom2', 'Custom3', 'Custom4']
@@ -1173,7 +1173,7 @@ with elements('heeeeat'):
   
   # Create the Nivo heatmap with custom labels for axes and cellHover for custom cell labels
   heatmap_chart = heatmap(
-      heatmap_data,
+      heatmap_data10,
       xtickvalues=x_axis_labels,
       ytickvalues=y_axis_labels,
       width=600,
