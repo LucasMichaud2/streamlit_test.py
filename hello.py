@@ -1173,7 +1173,7 @@ with elements('heeeeat'):
   
   # Create the Nivo heatmap with custom labels for axes and cellHover for custom cell labels
 
-  )
+  
   with mui.Box(sx={"height": 500}):
 # Display the heatmap
     nivo.HeatMap(
