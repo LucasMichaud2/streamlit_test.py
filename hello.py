@@ -1148,7 +1148,8 @@ with elements('nivo_heatmap1'):
         "minValue": 2000,
         "maxValue": 10000,
         "divergeAt": 0.5,
-      }
+      },
+      label='format',
     )
 
 
