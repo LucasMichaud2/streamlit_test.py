@@ -1130,7 +1130,7 @@ with elements('nivo_heatmap1'):
   
       score_data = {
         'x': row['rows'],
-        'y': row['norm'],
+        'y': {"value": row['norm'], "label": row['format']}
   
       }
       format_data['data'].append(score_data)
@@ -1138,11 +1138,15 @@ with elements('nivo_heatmap1'):
     nivo_data1.append(format_data)
 
 
-
+  def custom_tooltip(value, id, key):
+    label = value["label"]
+    return f'Label: {label}'
 
   with mui.Box(sx={"height": 500}):
     nivo.HeatMap(
       data=nivo_data1,
+      keys='x',
+      indexBy='y'
       colors={
         "type": 'diverging',
         "scheme": 'yellow_orange_red',
@@ -1150,7 +1154,7 @@ with elements('nivo_heatmap1'):
         "maxValue": 10000,
         "divergeAt": 0.5,
       },
-     
+      cellTooltip=custom_tooltip,
     )
 
 
