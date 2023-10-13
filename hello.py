@@ -1144,7 +1144,7 @@ with elements('nivo_heatmap1'):
         "scheme": 'yellow_orange_red',
         "minValue": 50,
         "maxValue": 100,
-        "divergeAt": 0.8,
+        "divergeAt": 1,
       }
     )
 
