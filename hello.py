@@ -1118,7 +1118,7 @@ with elements("nivo_heatmap"):
   with mui.Box(sx={"height": 500}):
     nivo.HeatMap(
       data=nivo_data,
-      cellTooltip=custom_tooltip,
+      label='label'
 
     )
 
