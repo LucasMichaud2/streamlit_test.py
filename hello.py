@@ -306,6 +306,7 @@ format_rating = format_rating[['channel', 'formats', 'format', selected_objectiv
 min_format = full_format_rating[selected_objective].min()
 max_format = full_format_rating[selected_objective].max()
 format_rating['norm'] = (format_rating[selected_objective] - min_format) / (max_format - min_format)*100
+format_rating['norm'] = format_rating['norm'].astype(float).round(2)
 format_rating2 = format_rating.copy()
 format_rating['norm'] = format_rating['norm'].apply(round_5)
 format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
