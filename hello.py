@@ -1146,7 +1146,7 @@ with elements('nivo_heatmap1'):
     nivo.HeatMap(
       data=nivo_data1,
       keys='x',
-      indexBy='y'
+      indexBy='y',
       colors={
         "type": 'diverging',
         "scheme": 'yellow_orange_red',
