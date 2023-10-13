@@ -1122,6 +1122,7 @@ with elements('nivo_heatmap1'):
   
     format_data = {
       'id': index,
+      'label': frame['format'],
       'data': []
     }
   
@@ -1149,7 +1150,7 @@ with elements('nivo_heatmap1'):
         "maxValue": 10000,
         "divergeAt": 0.5,
       },
-      label='id',
+      label='label',
     )
 
 
