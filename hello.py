@@ -309,6 +309,7 @@ format_rating['norm'] = (format_rating[selected_objective] - min_format) / (max_
 format_rating['norm'] = format_rating['norm'].astype(float).round(2)
 format_rating2 = format_rating.copy()
 format_rating2['norm'] = format_rating2['norm'].apply(lambda x: x**2)
+format_rating2['norm'] = format_rating2['norm'].astype(float).round(2)
 format_rating['norm'] = format_rating['norm'].apply(round_5)
 format_rating['mapped_colors'] = format_rating['norm'].map(color_dictionary)
 format_rating = format_rating.reset_index()
