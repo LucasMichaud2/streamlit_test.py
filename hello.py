@@ -1124,7 +1124,7 @@ with elements('nivo_heatmap1'):
     for _, row in frame.iterrows():
   
       score_data = {
-        'x': row['format'],
+        'x': row['rows'],
         'y': row['norm']
   
       }
