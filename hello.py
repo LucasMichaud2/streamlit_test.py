@@ -1145,9 +1145,9 @@ with elements('nivo_heatmap1'):
       colors={
         "type": 'diverging',
         "scheme": 'yellow_orange_red',
-        "minValue": 1000,
+        "minValue": 2000,
         "maxValue": 10000,
-        "divergeAt": 0.8,
+        "divergeAt": 0.5,
       }
     )
 
