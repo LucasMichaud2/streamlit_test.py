@@ -1079,17 +1079,23 @@ with elements("nivo_pie"):
 
 with elements("nivo_heatmap"):
 
+  def custom_tooltip(value, id, key):
+    label = value["label"]
+    return f'Label: {label}'
+
   nivo_data = [
     {
       "id": "Japan",
       "data": [
         {
           "x": "Train",
-          "y": -30524
+          "y": -30524,
+          "label": "Lucas"
         },
         {
           "x": "Subway",
-          "y": 85851
+          "y": 85851,
+          "label": "Charlotte"
         }
       ]
     },
@@ -1098,11 +1104,13 @@ with elements("nivo_heatmap"):
       "data": [
         {
           "x": "Train",
-          "y": -77344
+          "y": -77344,
+          "label": "Tatiana"
         },
         {
           "x": "Subway",
-          "y": 25260
+          "y": 25260,
+          "label": "Franck:
         }
       ]
     }
@@ -1110,9 +1118,15 @@ with elements("nivo_heatmap"):
   with mui.Box(sx={"height": 500}):
     nivo.HeatMap(
       data=nivo_data,
-      label='id',
+      keys="data",
+      indexBy="id",
+      cellTooltip=custom_tooltip,
 
     )
+
+
+
+
 
 with elements('nivo_heatmap1'):
   
