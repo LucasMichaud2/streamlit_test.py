@@ -1172,5 +1172,5 @@ with elements('nivo_heatmap1'):
 
 
 
-st.dataframe('df_rating1')
+st.dataframe(df_rating1)
 
