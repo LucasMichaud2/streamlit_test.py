@@ -316,7 +316,7 @@ if selected_region != 'None':
   region_max = df_region[selected_region].max()
   region_min = df_region[selected_region].min()
   df_region[selected_region] = ((df_region[selected_region] - region_min) / (region_max - region_min))*10
-  st.dataframe(df_region)
+  df_rating3 = df_rating3.merge(df_region, on='channel', how='left')
 
 
 
