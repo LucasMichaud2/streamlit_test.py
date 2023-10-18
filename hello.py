@@ -21,6 +21,7 @@ weighted_country = pd.read_csv(weighted_country_url)
 
 gamned_logo_url = 'https://raw.github.com/LucasMichaud2/streamlit_test.py/main/Logo_G_Gamned_red_baseline.jpg'
 
+st.dataframe(weighted_country)
 
 header_col1, header_col2 = st.columns(2)
 
