@@ -263,6 +263,9 @@ color_dictionary = {
     100: '#4A235A'
 }
 
+country_list = ['None', 'GCC', 'KSA', 'UAE', 'KUWAIT', 'BAHRAIN', 'QATAR', 'OMAN']
+country_df = pd.DataFrame(country_list)
+
 age_list = ['13-17', '18-24', '25-34', '35-44', '45-54', '55-64', '65+', 'all']
 age_df = pd.DataFrame(age_list)
 
@@ -275,6 +278,7 @@ target_df = pd.DataFrame(target_list)
 st.text(' ')
 st.sidebar.title('Heatmap Parameters')
 
+selected_region = st.sidebar.selectbox('Select Region', country_df)
 selected_objective = st.sidebar.selectbox('Select an objective', objective_df)
 selected_age = st.sidebar.multiselect("Select an age", age_df)
 selected_age = ', '.join(selected_age)
