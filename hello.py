@@ -16,6 +16,9 @@ df_data = pd.read_csv(data_url)
 age_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/Global_data-Table%201.csv'
 age_date = pd.read_csv(age_url)
 
+weighted_country_url = 'https://raw.githubusercontent.com/LucasMichaud2/streamlit_test.py/main/weighted_country.csv'
+weighted_country = pd.read_csv(weighted_country_url)
+
 gamned_logo_url = 'https://raw.github.com/LucasMichaud2/streamlit_test.py/main/Logo_G_Gamned_red_baseline.jpg'
 
 
