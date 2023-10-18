@@ -365,8 +365,6 @@ agg_rating_max = agg_rating3['average'].max()
 agg_rating3['average'] = ((agg_rating3['average'] - agg_rating_min) / (agg_rating_max - agg_rating_min))*100
 output_rating = agg_rating3.copy()
 
-st.dataframe(cost_rating)
-
                         
 
 #################################### Building Heatmap ####################################
@@ -1181,5 +1179,9 @@ with elements('nivo_heatmap1'):
 
 
 
-st.dataframe(df_rating2)
+st.dataframe(df_rating3)
+
+st.dataframe(format_rating)
+
+
 
