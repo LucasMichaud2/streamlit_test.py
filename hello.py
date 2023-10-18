@@ -306,7 +306,20 @@ df_rating2 = gamned_class.get_format_rating(df_rating1)
 df_rating3 = gamned_class.get_objective(selected_objective, df_rating2)
 df_rating3 = df_rating3[~df_rating3['channel'].isin(excluded_channel)]
 df_rating3 = df_rating3.reset_index(drop=True)
-st.dataframe(df_rating3)
+
+###################################### Adding Country Ratings ###################################
+
+if selected_region != 'None':
+
+  df_region = weighted_country[['channel', selected_region]]
+
+  region_max = df_region[selected_region].max()
+  region_min = df_region[selected_region].min()
+  df_region[selected_region] = ((df_region[selected_region] - region_min) / (region_max - region_min))*10
+  st.dataframe(df_region)
+
+
+
 full_format_rating = df_rating3.copy()
 format_rating = df_rating3.copy()
 format_rating['format'] = format_rating['channel'] + '\n' + format_rating['formats']
