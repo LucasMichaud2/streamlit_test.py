@@ -365,6 +365,7 @@ agg_rating_max = agg_rating3['average'].max()
 agg_rating3['average'] = ((agg_rating3['average'] - agg_rating_min) / (agg_rating_max - agg_rating_min))*100
 output_rating = agg_rating3.copy()
 
+st.dataframe(cost_rating)
 
                         
 
